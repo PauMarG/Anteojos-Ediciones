@@ -5,7 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anteojos Ediciones | Un libro, siete formas de vivirlo</title>
 
-    <!-- Tipografías Google Fonts -->
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Tipografías -->
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -71,7 +146,7 @@
       .logo {
         display: flex;
         align-items: center;
-        height: 50px;
+        height: 80px;
       }
 
       .logo img {
@@ -140,7 +215,7 @@
       }
 
       section {
-        padding: 96px 32px;
+        padding: 60px 32px;
       }
 
       .container {
@@ -448,6 +523,10 @@
         font-weight: 700;
       }
 
+      .sociales img {
+        max-height: 50px;
+      }
+
       .sociales a:hover {
         background: rgba(255, 255, 255, 0.15);
         transform: translateY(-3px);
@@ -526,7 +605,10 @@
     <header>
       <div class="nav-container">
         <div class="logo">
-          <img src="Logo_Anteojos Ediciones_02.png" alt="Anteojos Ediciones" />
+          <img
+            src="/img/Logo_Anteojos Ediciones_02.png"
+            alt="Anteojos Ediciones"
+          />
         </div>
         <nav class="menu">
           <a href="#inicio">Inicio</a>
@@ -546,10 +628,13 @@
           <div class="hero-content">
             <h1>Un libro, siete formas de vivirlo</h1>
             <p>
-              Un mismo contenido pensado desde la diversidad de formas de leer,
-              sentir y habitar el mundo.
+              Así se siente leer sin barreras.<br />Somos la primera editorial
+              100% inclusiva de Colombia y Latinoamérica. Creamos libros que
+              nacen accesibles para construir puentes, derribar barreras y
+              garantizar el acceso universal a la lectura. Leer con los sentidos
+              es una forma más justa de habitar el mundo.
             </p>
-            <a href="#formatos" class="btn-cta">Conocer los formatos</a>
+            <a href="#formatos" class="btn-cta">Explora nuestros libros</a>
           </div>
         </div>
       </section>
@@ -562,28 +647,6 @@
           distintas maneras. Durante mucho tiempo, la lectura dejó a muchas
           personas por fuera.
         </p>
-      </section>
-
-      <!-- QUIÉNES SOMOS -->
-      <section id="quienes">
-        <div class="container quienes">
-          <div class="quienes-text">
-            <h2>¿Quiénes somos?</h2>
-            <p>
-              En Anteojos Ediciones creemos que esa es una deuda histórica que
-              empieza a saldarse cuando los libros nacen accesibles y se piensan
-              desde la diversidad de formas de leer. Por eso, ¡te invitamos a
-              ponerte los Anteojos!
-            </p>
-            <a href="#" class="btn-cta">Conocé más</a>
-          </div>
-          <div class="imagen">
-            <img
-              src="Logo_Anteojos Ediciones_redondo.png"
-              alt="Logo Anteojos"
-            />
-          </div>
-        </div>
       </section>
 
       <!-- SERVICIOS -->
@@ -619,6 +682,28 @@
         </div>
       </section>
 
+      <!-- QUIÉNES SOMOS -->
+      <section id="quienes">
+        <div class="container quienes">
+          <div class="quienes-text">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+              En Anteojos Ediciones creemos que esa es una deuda histórica que
+              empieza a saldarse cuando los libros nacen accesibles y se piensan
+              desde la diversidad de formas de leer. Por eso, ¡te invitamos a
+              ponerte los Anteojos!
+            </p>
+            <a href="#" class="btn-cta">Conoce más</a>
+          </div>
+          <div class="imagen">
+            <img
+              src="/img/Logo_Anteojos Ediciones_redondo.png"
+              alt="Logo Anteojos Redondo"
+            />
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACTO -->
       <section id="contacto">
         <div class="contacto">
@@ -635,13 +720,21 @@
 
     <footer>
       <div class="sociales">
-        <a href="#">📷 Instagram</a>
-        <a href="#">👍 Facebook</a>
-        <a href="#">✉️ Email</a>
+        <a href="https://www.ejemplo.com"
+          ><img src="/img/instagram.png" alt="Instagram"
+        /></a>
+        <a href="https://www.ejemplo.com"
+          ><img src="/img/facebook.png" alt="Facebook"
+        /></a>
+        <a href="https://www.ejemplo.com"
+          ><img src="/img/mail.png" alt="Email"
+        /></a>
       </div>
       <p>© Anteojos Ediciones 2026</p>
     </footer>
 
-    <a href="#" class="whatsapp">💬</a>
+    <a href="#" class="whatsapp"
+      ><img src="/img/whatsapp.png" alt="WhatsApp"
+    /></a>
   </body>
 </html>
