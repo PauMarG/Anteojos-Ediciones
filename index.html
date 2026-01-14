@@ -90,7 +90,7 @@
       :root {
         --verde-principal: #0a6b63;
         --verde-oscuro: #064f49;
-        --turquesa: #aadcd9;
+        --turquesa: #78c8c3;
         --rosa: #eeb9b0;
         --amarillo: #f4c8b4;
         --gris-claro: #f8f9fa;
@@ -146,7 +146,7 @@
       .logo {
         display: flex;
         align-items: center;
-        height: 80px;
+        height: 100px;
       }
 
       .logo img {
@@ -211,7 +211,7 @@
 
       /* ===== MAIN ===== */
       main {
-        margin-top: 88px;
+        margin-top: 120px;
       }
 
       section {
@@ -228,16 +228,16 @@
         background: linear-gradient(
           135deg,
           var(--turquesa) 0%,
-          var(--amarillo) 50%,
-          var(--rosa) 100%
+          var(--amarillo) 100%
         );
         border-radius: 48px;
-        padding: 120px 72px;
+        padding: 72px 72px;
         text-align: center;
         position: relative;
         overflow: hidden;
       }
 
+      /* Gradiente animado */
       .hero::before {
         content: "";
         position: absolute;
@@ -251,6 +251,20 @@
           transparent 70%
         );
         animation: pulse 8s ease-in-out infinite;
+        z-index: 1;
+      }
+
+      /* Imagen al 50% */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url(/img/Anteojos_1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        opacity: 0.5;
+        z-index: 2;
       }
 
       @keyframes pulse {
@@ -265,13 +279,22 @@
         }
       }
 
+      /* Asegurar que el contenido esté encima */
       .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 3;
       }
 
       .hero h1 {
         font-size: clamp(2.5rem, 5vw, 3.8rem);
+        font-weight: 900;
+        margin-bottom: 28px;
+        color: var(--texto);
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+      }
+
+      .hero h2 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
         font-weight: 900;
         margin-bottom: 28px;
         color: var(--texto);
@@ -290,13 +313,13 @@
       /* ===== FRASE ===== */
       .frase {
         text-align: center;
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: 700;
         color: var(--texto);
         line-height: 1.9;
-        padding: 0 24px;
+        padding: 0 18px;
       }
 
       .frase-destacada {
@@ -308,6 +331,10 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+      }
+
+      .frase-destacada2 {
+        color: #0a6b63;
       }
 
       /* ===== QUIÉNES SOMOS ===== */
@@ -323,7 +350,7 @@
         grid-template-columns: 1.3fr 0.7fr;
         gap: 72px;
         align-items: center;
-        padding: 88px;
+        padding: 72px;
         box-shadow: 0 20px 60px rgba(10, 107, 99, 0.25);
       }
 
@@ -335,7 +362,7 @@
 
       .quienes-text p {
         margin-bottom: 40px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.9;
         opacity: 0.95;
       }
@@ -626,13 +653,14 @@
       <section id="inicio">
         <div class="container hero">
           <div class="hero-content">
-            <h1>Un libro, siete formas de vivirlo</h1>
+            <h1>Así se siente leer sin barreras</h1>
+            <h2>Un libro, siete formas de vivirlo</h2>
             <p>
-              Así se siente leer sin barreras.<br />Somos la primera editorial
-              100% inclusiva de Colombia y Latinoamérica. Creamos libros que
-              nacen accesibles para construir puentes, derribar barreras y
-              garantizar el acceso universal a la lectura. Leer con los sentidos
-              es una forma más justa de habitar el mundo.
+              Somos la primera editorial 100% inclusiva de Colombia y
+              Latinoamérica. Creamos libros que nacen accesibles para construir
+              puentes, derribar barreras y garantizar el acceso universal a la
+              lectura. Leer con los sentidos es una forma más justa de habitar
+              el mundo.
             </p>
             <a href="#formatos" class="btn-cta">Explora nuestros libros</a>
           </div>
@@ -645,7 +673,14 @@
           <span class="frase-destacada">Abrazar la diversidad</span> es
           reconocer que las personas leen, sienten y habitan el mundo de
           distintas maneras. Durante mucho tiempo, la lectura dejó a muchas
-          personas por fuera.
+          personas por fuera. <br />
+          <br />
+          En <span class="frase-destacada">Anteojos Ediciones</span> creemos que
+          esa es una <span class="frase-destacada2">deuda histórica</span> que
+          empieza a saldarse cuando los libros
+          <span class="frase-destacada2">nacen accesibles</span> y se piensan
+          desde la diversidad de formas de leer. <br />Por eso, ¡te invitamos a
+          ponerte los Anteojos!
         </p>
       </section>
 
@@ -688,10 +723,14 @@
           <div class="quienes-text">
             <h2>¿Quiénes somos?</h2>
             <p>
-              En Anteojos Ediciones creemos que esa es una deuda histórica que
-              empieza a saldarse cuando los libros nacen accesibles y se piensan
-              desde la diversidad de formas de leer. Por eso, ¡te invitamos a
-              ponerte los Anteojos!
+              Somos la primera editorial independiente completamente inclusiva
+              de Colombia y Latinoamérica.
+              <br />
+              Transformamos la forma tradicional de hacer edición para abrir
+              caminos hacia una lectura sin barreras, donde los sentidos son
+              puente y la diversidad es parte de lo humano. <br />
+              ¡En Anteojos Ediciones le decimos sí a la inclusión en los libros
+              y las historias para todos!
             </p>
             <a href="#" class="btn-cta">Conoce más</a>
           </div>
@@ -709,7 +748,7 @@
         <div class="contacto">
           <h2>Queremos conversar contigo</h2>
           <p>
-            Escribinos para conocer nuestros libros, crear un proyecto o llevar
+            Escríbenos para conocer nuestros libros, crear un proyecto o llevar
             la lectura accesible a nuevos espacios y construyamos juntos un
             mundo más empático y humano.
           </p>
