@@ -439,6 +439,10 @@
         background: var(--gris-claro);
         border-radius: 48px;
         padding: 96px 48px;
+        background-image: url(/img/Anteojos_3.png);
+        background-repeat: no-repeat;
+        background-size: 18%;
+        background-position: 100% 90%;
       }
 
       .servicios h2 {
@@ -628,6 +632,14 @@
         border-color: var(--amarillo);
       }
 
+      .card:nth-child(4) {
+        border-color: var(--turquesa);
+      }
+
+      .card:nth-child(5) {
+        border-color: var(--rosa);
+      }
+
       .card:hover {
         transform: translateY(-12px);
         box-shadow: 0 20px 50px rgba(10, 107, 99, 0.15);
@@ -667,6 +679,22 @@
           135deg,
           var(--amarillo) 0%,
           rgba(244, 200, 180, 0.4) 100%
+        );
+      }
+
+      .card:nth-child(4) .img {
+        background: linear-gradient(
+          135deg,
+          var(--turquesa) 0%,
+          rgba(170, 220, 217, 0.4) 100%
+        );
+      }
+
+      .card:nth-child(5) .img {
+        background: linear-gradient(
+          135deg,
+          var(--rosa) 0%,
+          rgba(238, 185, 176, 0.4) 100%
         );
       }
 
@@ -1061,52 +1089,53 @@
         </div>
       </section>
 
-      <!-- ==== POR QUÉ ELEGIRNOS ==== -->
-      <section>
-        <div class="container">
-          <h2 style="font-size: 3rem; margin-bottom: 48px">
-            ¿Por qué elegirnos?
-          </h2>
-
+      <!-- POR QUE ELEGIRNOS -->
+      <section id="servicios">
+        <div class="container servicios">
+          <h2>¿Por qué elegirnos?</h2>
           <div class="cards">
             <div class="card">
+              <div class="img">Foto / Imagen</div>
               <h3>Somos pioneros</h3>
               <p>
                 Abrimos nuevos caminos en Colombia y Latinoamérica en edición
-                accesible e inclusiva con siete formatos que garantizan acceso
+                accesible e inclusiva, con siete formatos que garantizan acceso
                 universal a la lectura.
               </p>
             </div>
-
             <div class="card">
+              <div class="img">Foto / Imagen</div>
               <h3>Equipo multidisciplinar</h3>
               <p>
-                Editores, ilustradores, intérpretes, diseñadores,
-                fonoaudiólogos, pedagogos y especialistas en accesibilidad.
+                Contamos con un equipo multidisciplinar de editora,
+                ilustradores, intérpretes, diseñadores, fonoaudiólogos,
+                pedagogos y especialistas en accesibilidad.
               </p>
             </div>
-
             <div class="card">
+              <div class="img">Foto / Imagen</div>
               <h3>Nuestra experiencia</h3>
               <p>
-                Experiencia comprobada en talleres multisensoriales, pedagógicos
-                y culturales.
+                Tenemos experiencia comprobada en talleres multisensoriales,
+                dinámicos y pedagógicos que inspiran nuevas formas de leer y
+                aprender.
               </p>
             </div>
-
             <div class="card">
+              <div class="img">Foto / Imagen</div>
               <h3>Historias que unen</h3>
               <p>
-                Cada libro nace para conectar y convertirse en una herramienta
-                de inclusión y empatía.
+                Cada libro nace para conectar, convirtiéndose en una herramienta
+                de inclusión, empatía y conocimiento.
               </p>
             </div>
-
             <div class="card">
+              <div class="img">Foto / Imagen</div>
               <h3>Lectura sin fronteras</h3>
               <p>
-                La lectura como puente que une culturas, lenguas y formas de
-                comunicación.
+                Abrazamos la lectura como puente que une culturas, lenguas y
+                formas de comunicación y la transformamos en una experiencia que
+                se siente, se escucha y se comparte a través de los sentidos.
               </p>
             </div>
           </div>
@@ -1117,17 +1146,26 @@
     <!-- ==== FOOTER (IGUAL AL INDEX) ==== -->
     <footer>
       <div class="sociales">
-        <a href="#"><img src="/img/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="/img/facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="/img/mail.png" alt="Email" /></a>
+        <a
+          href="https://www.instagram.com/anteojosediciones?igsh=MWVuZ2dncTV1cjZwdw%3D%3D&utm_source=qr"
+          target="_blank"
+          ><img src="/img/instagram.png" alt="Instagram"
+        /></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61560272981216&mibextid=ZbWKwL"
+          target="_blank"
+          ><img src="/img/facebook.png" alt="Facebook"
+        /></a>
+        <a href="mailto:anteojosedicionessitioweb@gmail.com" target="_blank"
+          ><img src="/img/mail.png" alt="Email"
+        /></a>
       </div>
       <p>© Anteojos Ediciones 2026</p>
     </footer>
 
-    <a href="#" class="whatsapp">
-      <img src="/img/whatsapp.png" alt="WhatsApp" />
-    </a>
-
+    <a href="http://wa.me/573102864821" class="whatsapp"
+      ><img src="/img/whatsapp.png" alt="WhatsApp"
+    /></a>
     <!-- ==== JAVASCRIPT MENÚ HAMBURGUESA ==== -->
     <script>
       const menuToggle = document.getElementById("menuToggle");
