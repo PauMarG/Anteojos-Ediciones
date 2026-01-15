@@ -76,9 +76,9 @@
       href="/icons/favicon-16x16.png"
     />
     <link rel="manifest" href="/icons/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffff" />
     <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffff" />
 
     <!-- Tipografías -->
     <link
@@ -95,7 +95,7 @@
         --amarillo: #f4c8b4;
         --gris-claro: #f8f9fa;
         --texto: #1f1f1f;
-        --blanco: #ffffff;
+        --blanco: #ffff;
       }
 
       * {
@@ -121,7 +121,7 @@
         color: inherit;
       }
 
-      /* ===== HEADER ===== */
+      /* ==== HEADER ==== */
       header {
         position: fixed;
         top: 0;
@@ -147,6 +147,7 @@
         display: flex;
         align-items: center;
         height: 100px;
+        z-index: 1001;
       }
 
       .logo img {
@@ -209,7 +210,53 @@
         box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
       }
 
-      /* ===== MAIN ===== */
+      /* ==== MENU HAMBURGUESA ==== */
+      .menu-toggle {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .menu-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(10, 107, 99, 0.4);
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--blanco);
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      /* ==== MAIN ==== */
       main {
         margin-top: 120px;
       }
@@ -223,7 +270,7 @@
         margin: 0 auto;
       }
 
-      /* ===== HERO ===== */
+      /* ==== HERO ==== */
       .hero {
         background: linear-gradient(
           135deg,
@@ -310,7 +357,7 @@
         line-height: 1.8;
       }
 
-      /* ===== FRASE ===== */
+      /* ==== FRASE ==== */
       .frase {
         text-align: center;
         max-width: 1000px;
@@ -337,7 +384,7 @@
         color: #0a6b63;
       }
 
-      /* ===== QUIÉNES SOMOS ===== */
+      /* ==== QUIÉNES SOMOS ==== */
       .quienes {
         background: linear-gradient(
           135deg,
@@ -398,7 +445,7 @@
         object-fit: contain;
       }
 
-      /* ===== SERVICIOS ===== */
+      /* ==== SERVICIOS ==== */
       .servicios {
         background: var(--gris-claro);
         border-radius: 48px;
@@ -494,7 +541,7 @@
         line-height: 1.8;
       }
 
-      /* ===== CONTACTO ===== */
+      /* ==== CONTACTO ==== */
       .contacto {
         text-align: center;
         max-width: 820px;
@@ -522,7 +569,7 @@
         color: #4a5568;
       }
 
-      /* ===== FOOTER ===== */
+      /* ==== FOOTER ==== */
       footer {
         background: linear-gradient(
           135deg,
@@ -564,7 +611,7 @@
         font-weight: 600;
       }
 
-      /* ===== WHATSAPP ===== */
+      /* ==== WHATSAPP ==== */
       .whatsapp {
         position: fixed;
         right: 32px;
@@ -589,7 +636,7 @@
         box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
       }
 
-      /* ===== RESPONSIVE ===== */
+      /* ==== RESPONSIVE ==== */
       @media (max-width: 1024px) {
         .quienes {
           grid-template-columns: 1fr;
@@ -600,13 +647,63 @@
         .cards {
           grid-template-columns: 1fr;
         }
+
+        /* Mostrar botón hamburguesa en tablets verticales */
+        .menu-toggle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 300px;
+          height: 100vh;
+          background: linear-gradient(
+            180deg,
+            var(--verde-principal) 0%,
+            var(--verde-oscuro) 100%
+          );
+          flex-direction: column;
+          justify-content: center;
+          gap: 32px;
+          padding: 40px;
+          transition: right 0.4s ease;
+          box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu.active {
+          right: 0;
+        }
+
+        .menu a {
+          color: var(--blanco);
+          font-size: 1.2rem;
+          text-align: center;
+          width: 100%;
+        }
+
+        .menu a::after {
+          background: linear-gradient(90deg, var(--turquesa), var(--amarillo));
+        }
+
+        .menu .btn-cta {
+          background: var(--blanco);
+          color: var(--verde-principal);
+          width: 100%;
+          text-align: center;
+        }
+
+        .menu .btn-cta:hover {
+          background: var(--turquesa);
+          color: var(--blanco);
+        }
       }
 
       @media (max-width: 768px) {
-        .menu {
-          display: none;
-        }
-
         section {
           padding: 64px 24px;
         }
@@ -625,6 +722,10 @@
           padding: 64px 32px;
           border-radius: 32px;
         }
+
+        .frase {
+          font-size: 1.5rem;
+        }
       }
     </style>
   </head>
@@ -637,8 +738,16 @@
             alt="Anteojos Ediciones"
           />
         </div>
-        <nav class="menu">
-          <a href="#inicio">Inicio</a>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="menu" id="menu">
+          <a href="/index.html">Inicio</a>
           <a href="/quienes-somos.html">Quiénes somos</a>
           <a href="/index.html">Libros y 7 formatos</a>
           <a href="/index.html">Servicios</a>
@@ -775,5 +884,33 @@
     <a href="#" class="whatsapp"
       ><img src="/img/whatsapp.png" alt="WhatsApp"
     /></a>
+
+    <script>
+      // Menú hamburguesa
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+
+      // Cerrar menú al hacer click en un enlace
+      const menuLinks = menu.querySelectorAll("a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        });
+      });
+
+      // Cerrar menú al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>
