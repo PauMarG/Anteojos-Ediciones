@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Día de los Muertos de Catrina | Anteojos Ediciones</title>
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffff" />
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffff" />
+
+    <!-- Tipografías -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --verde-principal: #0a6b63;
+        --verde-oscuro: #064f49;
+        --turquesa: #aadcd9;
+        --rosa: #eeb9b0;
+        --amarillo: #f4c8b4;
+        --gris-claro: #f8f9fa;
+        --texto: #1f1f1f;
+        --blanco: #ffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Raleway", sans-serif;
+        color: var(--texto);
+        line-height: 1.7;
+        background-color: var(--blanco);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ==== HEADER ==== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(170, 220, 217, 0.3);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(10, 107, 99, 0.08);
+      }
+
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 16px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        z-index: 1001;
+      }
+
+      .logo img {
+        height: 100%;
+        width: auto;
+      }
+
+      .menu {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .menu a {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .menu a:hover {
+        color: var(--verde-principal);
+      }
+
+      .menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--turquesa),
+          var(--verde-principal)
+        );
+        transition: width 0.3s ease;
+      }
+
+      .menu a:hover::after {
+        width: 100%;
+      }
+
+      .btn-cta {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 12px 28px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+      }
+
+      .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      /* ==== MENU HAMBURGUESA ==== */
+      .menu-toggle {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .menu-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(10, 107, 99, 0.4);
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--blanco);
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      /* ==== MAIN ==== */
+      main {
+        margin-top: 150px;
+      }
+
+      section {
+        padding: 60px 32px;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      /* ==== HERO LIBRO ==== */
+      .hero-libro {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      .libro-portada-sticky {
+        position: sticky;
+        top: 180px;
+      }
+
+      .libro-imagenes {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .libro-imagen-principal {
+        width: 100%;
+        aspect-ratio: 3/4;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(10, 107, 99, 0.2);
+      }
+
+      .libro-imagen-principal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .libro-imagenes-secundarias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .imagen-secundaria {
+        width: 100%;
+        aspect-ratio: 1;
+        background: linear-gradient(
+          135deg,
+          var(--turquesa) 0%,
+          var(--verde-principal) 100%
+        );
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.75rem;
+        color: var(--blanco);
+        text-align: center;
+        padding: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.15);
+      }
+
+      .imagen-secundaria:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(10, 107, 99, 0.25);
+      }
+
+      .imagen-secundaria.video {
+        background: linear-gradient(
+          135deg,
+          var(--rosa) 0%,
+          var(--amarillo) 100%
+        );
+      }
+
+      .libro-info h1 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 900;
+        margin-bottom: 24px;
+        color: var(--verde-principal);
+        font-style: italic;
+        line-height: 1.2;
+      }
+
+      .libro-autores {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 32px;
+        font-weight: 600;
+      }
+
+      .libro-descripcion {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        margin-bottom: 32px;
+        color: var(--texto);
+      }
+
+      .libro-precio {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 32px;
+      }
+
+      .libro-botones {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .btn-comprar {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 18px 40px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        text-align: center;
+        display: block;
+      }
+
+      .btn-comprar:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      .btn-donar {
+        background: var(--blanco);
+        color: var(--verde-principal);
+        padding: 18px 40px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.15);
+        border: 2px solid var(--verde-principal);
+        text-align: center;
+        display: block;
+      }
+
+      .btn-donar:hover {
+        background: var(--verde-principal);
+        color: var(--blanco);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.3);
+      }
+
+      .libro-detalles {
+        background: var(--gris-claro);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+      }
+
+      .libro-detalles ul {
+        list-style: none;
+      }
+
+      .libro-detalles li {
+        font-size: 1.05rem;
+        padding: 8px 0;
+        color: var(--texto);
+        font-weight: 600;
+      }
+
+      /* ==== SECCIONES CONTENIDO ==== */
+      .seccion-contenido {
+        background: var(--gris-claro);
+        border-radius: 48px;
+        padding: 80px 72px;
+        margin-bottom: 48px;
+      }
+
+      .seccion-contenido h2 {
+        font-size: 2.4rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 32px;
+      }
+
+      .seccion-contenido p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--texto);
+        margin-bottom: 24px;
+      }
+
+      .seccion-contenido ul {
+        list-style: none;
+        margin-top: 32px;
+      }
+
+      .seccion-contenido li {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--texto);
+        margin-bottom: 20px;
+        padding-left: 32px;
+        position: relative;
+      }
+
+      .seccion-contenido li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--verde-principal);
+        font-weight: 900;
+        font-size: 1.4rem;
+      }
+
+      /* ==== ENVÍO ==== */
+      .info-envio {
+        background: linear-gradient(
+          135deg,
+          rgba(170, 220, 217, 0.3) 0%,
+          rgba(244, 200, 180, 0.3) 100%
+        );
+        border-radius: 24px;
+        padding: 40px;
+        margin-bottom: 48px;
+      }
+
+      .info-envio h3 {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 20px;
+      }
+
+      .info-envio p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--texto);
+        margin-bottom: 16px;
+      }
+
+      /* ==== BOTONES FINALES ==== */
+      .botones-finales {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 48px;
+      }
+
+      .boton-final-card {
+        background: var(--blanco);
+        border-radius: 24px;
+        padding: 48px 40px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 3px solid var(--turquesa);
+      }
+
+      .boton-final-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(10, 107, 99, 0.2);
+        border-color: var(--verde-principal);
+      }
+
+      .boton-final-card h3 {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 16px;
+      }
+
+      .boton-final-card p {
+        font-size: 1.05rem;
+        color: #666;
+        margin-bottom: 24px;
+        line-height: 1.6;
+      }
+
+      .boton-final-card .btn-comprar {
+        margin: 0;
+      }
+
+      /* ==== FOOTER ==== */
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--verde-oscuro) 0%,
+          var(--verde-principal) 100%
+        );
+        color: var(--blanco);
+        padding: 56px 32px;
+        text-align: center;
+        margin-top: 64px;
+      }
+
+      .sociales {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 32px;
+        font-size: 1.1rem;
+      }
+
+      .sociales a {
+        transition: all 0.3s ease;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      .sociales img {
+        max-height: 50px;
+      }
+
+      .sociales a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+      }
+
+      footer p {
+        opacity: 0.9;
+        font-weight: 600;
+      }
+
+      /* ==== WHATSAPP ==== */
+      .whatsapp {
+        position: fixed;
+        right: 32px;
+        bottom: 32px;
+        width: 68px;
+        height: 68px;
+        background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 32px;
+        z-index: 2000;
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .whatsapp:hover {
+        transform: scale(1.1) translateY(-4px);
+        box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+      }
+
+      /* ==== RESPONSIVE ==== */
+      @media (max-width: 1024px) {
+        .menu-toggle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 300px;
+          height: 100vh;
+          background: linear-gradient(
+            180deg,
+            var(--verde-principal) 0%,
+            var(--verde-oscuro) 100%
+          );
+          flex-direction: column;
+          justify-content: center;
+          gap: 32px;
+          padding: 40px;
+          transition: right 0.4s ease;
+          box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu.active {
+          right: 0;
+        }
+
+        .menu a {
+          color: var(--blanco);
+          font-size: 1.2rem;
+          text-align: center;
+          width: 100%;
+        }
+
+        .menu a::after {
+          background: linear-gradient(90deg, var(--turquesa), var(--amarillo));
+        }
+
+        .menu .btn-cta {
+          background: var(--blanco);
+          color: var(--verde-principal);
+          width: 100%;
+          text-align: center;
+        }
+
+        .menu .btn-cta:hover {
+          background: var(--turquesa);
+          color: var(--blanco);
+        }
+
+        .hero-libro {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .libro-portada-sticky {
+          position: static;
+        }
+
+        .botones-finales {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 48px 24px;
+        }
+
+        .seccion-contenido {
+          padding: 48px 32px;
+          border-radius: 32px;
+        }
+
+        .libro-info h1 {
+          font-size: 2rem;
+        }
+
+        .libro-precio {
+          font-size: 1.6rem;
+        }
+
+        .seccion-contenido h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="/img/Logo_Anteojos Ediciones_02.png"
+            alt="Anteojos Ediciones"
+          />
+        </div>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="menu" id="menu">
+          <a href="/index.html">Inicio</a>
+          <a href="/quienes-somos.html">Quiénes somos</a>
+          <a href="/libros.html">Libros y 7 formatos</a>
+          <a href="/servicios.html">Servicios</a>
+          <a href="/recital-ucumari.html">Recital Ucumarí</a>
+          <a href="/contacto.html">Contacto</a>
+          <a href="#" class="btn-cta">Comprar libros</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO LIBRO -->
+      <section>
+        <div class="container hero-libro">
+          <!-- Columna izquierda: Imágenes -->
+          <div class="libro-portada-sticky">
+            <div class="libro-imagenes">
+              <div class="libro-imagen-principal">
+                <img
+                  src="catrina.png"
+                  alt="El Día de los Muertos de Catrina"
+                />
+              </div>
+              <div class="libro-imagenes-secundarias">
+                <div class="imagen-secundaria">Foto / Imagen</div>
+                <div class="imagen-secundaria">Foto / Imagen</div>
+                <div class="imagen-secundaria">Foto / Imagen</div>
+              </div>
+              <div class="imagen-secundaria video">
+                <span>▶ Video YouTube</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: Información -->
+          <div class="libro-info">
+            <h1>El Día de los Muertos de Catrina</h1>
+            <h2>Una fiesta de color, gratitud y memoria para leer con los sentidos</h2>
+            <p class="libro-autores">
+              Escrito e ilustrado por la mexicana Adriana Morales Marín
+            </p>
+
+            <div class="libro-descripcion">
+              <p>
+                Inspirado en la fiesta más representativa de la cultura mexicana, este libro nos lleva de la mano de Catrina, símbolo alegre del Día de Muertos, y de su curioso amigo Micifuz, un gato recién llegado a la celebración.
+              </p>
+              <p>
+                Juntos recorren los puestos, el cementerio, las calles llenas de color y el altar para descubrir que el Día de Muertos no es triste ni gris: es una celebración de amor y gratitud por el legado de quienes ya partieron, ¿Estás listo/a para vivir esta tradición con tus sentidos?
+              </p>
+            </div>
+
+            <div class="libro-precio">Precio: $80.000 COP</div>
+
+            <div class="libro-botones">
+              <a href="#" class="btn-comprar">Quiero comprarlo</a>
+              <a href="#" class="btn-donar">Quiero donarlo</a>
+            </div>
+
+            <div class="libro-detalles">
+              <ul>
+                <li>Tapa blanda</li>
+                <li>60 páginas</li>
+                <li>7 formas diferentes de leer la historia</li>
+                <li>27.9 cm x 21.5 cm</li>
+                <li>ISBN 978-628-96372-0-5</li>
+              </ul>
+            </div>
+
+        </div>
+      </section>
+
+      <!-- ¿POR QUÉ LEERLO? -->
+      <section>
+        <div class="container seccion-contenido">
+          <h2>¿Por qué leerlo?</h2>
+          <ul>
+            <li>
+              Invita a hablar de <strong>memoria y despedida</strong>
+              desde la ternura y la alegría.
+            </li>
+            <li>
+              <strong
+                >Se disfruta en familia, aula o biblioteca: </strong
+              >
+              una historia que une generaciones.
+            </li>
+            <li>
+              Descubrirás <strong>otras formas de leer.</strong> 
+            </li>
+            <li>
+              Recorrerás la tradición más importante de México <strong> a través de los sentidos y 7 formatos diferentes.</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- INFORMACIÓN DE ENVÍO -->
+      <section>
+        <div class="container seccion-contenido">
+          <h2>Información de envío</h2>
+          <p>
+            Para la ciudad de Bogotá el envío tiene un valor de $10.000. El
+            envío a otras ciudades de Colombia tiene un valor de $16.000. En
+            Bogotá el libro llegará entre 1-2 días, y para otras ciudades de 2 a
+            3 días a partir del día en el que el paquete se despacha.
+          </p>
+          <p>
+            Si el libro es un obsequio, podemos enviarlo con el mensaje que nos
+            indiques a la dirección que nos compartas vía WhatsApp al
+            <strong>(+57) 310 286 4821</strong>.
+          </p>
+        </div>
+      </section>
+
+    <footer>
+      <div class="sociales">
+        <a
+          href="https://www.instagram.com/anteojosediciones?igsh=MWVuZ2dncTV1cjZwdw%3D%3D&utm_source=qr"
+          target="_blank"
+          ><img src="/img/instagram.png" alt="Instagram"
+        /></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61560272981216&mibextid=ZbWKwL"
+          target="_blank"
+          ><img src="/img/facebook.png" alt="Facebook"
+        /></a>
+        <a href="mailto:anteojosediciones@gmail.com" target="_blank"
+          ><img src="/img/mail.png" alt="Email"
+        /></a>
+      </div>
+      <p>© Anteojos Ediciones 2026</p>
+    </footer>
+
+    <a href="http://wa.me/573102864821" class="whatsapp" target="_blank"
+      ><img src="/img/whatsapp.png" alt="WhatsApp"
+    /></a>
+
+    <script>
+      // Menú hamburguesa
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+
+      // Cerrar menú al hacer click en un enlace
+      const menuLinks = menu.querySelectorAll("a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        });
+      });
+
+      // Cerrar menú al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
