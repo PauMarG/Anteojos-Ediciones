@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anteojos Ediciones | Libros y 7 Formatos</title>
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffff" />
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffff" />
+
+    <!-- Tipografías -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --verde-principal: #0a6b63;
+        --verde-oscuro: #064f49;
+        --turquesa: #aadcd9;
+        --rosa: #eeb9b0;
+        --amarillo: #f4c8b4;
+        --gris-claro: #f8f9fa;
+        --texto: #1f1f1f;
+        --blanco: #ffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Raleway", sans-serif;
+        color: var(--texto);
+        line-height: 1.7;
+        background-color: var(--blanco);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ==== HEADER ==== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(170, 220, 217, 0.3);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(10, 107, 99, 0.08);
+      }
+
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 16px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        z-index: 1001;
+      }
+
+      .logo img {
+        height: 100%;
+        width: auto;
+      }
+
+      .menu {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .menu a {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .menu a:hover {
+        color: var(--verde-principal);
+      }
+
+      .menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--turquesa),
+          var(--verde-principal)
+        );
+        transition: width 0.3s ease;
+      }
+
+      .menu a:hover::after {
+        width: 100%;
+      }
+
+      .btn-cta {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 12px 28px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+      }
+
+      .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      /* ==== MENU HAMBURGUESA ==== */
+      .menu-toggle {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .menu-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(10, 107, 99, 0.4);
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--blanco);
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      /* ==== MAIN ==== */
+      main {
+        margin-top: 150px;
+      }
+
+      section {
+        padding: 60px 32px;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      /* ==== HERO ==== */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(170, 220, 217, 0.3) 0%,
+          rgba(244, 200, 180, 0.3) 100%
+        );
+        border-radius: 48px;
+        padding: 80px 72px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-image: url(/img/libros-hero.jpg);
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(170, 220, 217, 0.85) 0%,
+          rgba(244, 200, 180, 0.85) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
+        font-weight: 900;
+        margin-bottom: 28px;
+        color: var(--texto);
+      }
+
+      .hero p {
+        max-width: 820px;
+        margin: 0 auto 48px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--texto);
+        line-height: 1.8;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 16px 40px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--verde-principal);
+        padding: 16px 40px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.2);
+        display: inline-block;
+      }
+
+      .btn-secondary:hover {
+        background: var(--blanco);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.3);
+      }
+
+      /* ==== LEER CON LOS SENTIDOS ==== */
+      .leer-sentidos {
+        background: var(--gris-claro);
+        border-radius: 48px;
+        padding: 80px 72px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .leer-sentidos-text h2 {
+        font-size: 2.6rem;
+        margin-bottom: 32px;
+        font-weight: 900;
+        color: var(--verde-principal);
+      }
+
+      .leer-sentidos-text p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--texto);
+      }
+
+      .leer-sentidos-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          var(--turquesa) 0%,
+          var(--rosa) 100%
+        );
+        border-radius: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--texto);
+      }
+
+      /* ==== SIETE FORMATOS ==== */
+      .siete-formatos {
+        text-align: center;
+      }
+
+      .siete-formatos h2 {
+        font-size: 2.6rem;
+        margin-bottom: 12px;
+        font-weight: 900;
+        color: var(--verde-principal);
+      }
+
+      .siete-formatos > p {
+        max-width: 900px;
+        margin: 0 auto 64px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--texto);
+      }
+
+      .puzzle-container {
+        max-width: 1000px;
+        margin: 0 auto 48px;
+        position: relative;
+      }
+
+      .puzzle-image {
+        width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(10, 107, 99, 0.15);
+      }
+
+      .formatos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-top: 64px;
+      }
+
+      .formato-card {
+        background: var(--blanco);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .formato-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(10, 107, 99, 0.15);
+        border-color: var(--turquesa);
+      }
+
+      .formato-card h3 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 16px;
+      }
+
+      .formato-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #4a5568;
+      }
+
+      /* ==== CATÁLOGO ==== */
+      .catalogo {
+        background: var(--gris-claro);
+        border-radius: 48px;
+        padding: 80px 72px;
+      }
+
+      .catalogo h2 {
+        text-align: center;
+        font-size: 2.6rem;
+        margin-bottom: 64px;
+        font-weight: 900;
+        color: var(--verde-principal);
+      }
+
+      .libro-item {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 48px;
+        align-items: center;
+        margin-bottom: 64px;
+      }
+
+      .libro-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .libro-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          var(--amarillo) 0%,
+          var(--rosa) 100%
+        );
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--texto);
+        box-shadow: 0 8px 30px rgba(10, 107, 99, 0.15);
+      }
+
+      .libro-content h3 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+
+      .libro-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--texto);
+        margin-bottom: 16px;
+      }
+
+      .libro-content .btn-libro {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 14px 36px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      .libro-content .btn-libro:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      /* ==== DONACIÓN ==== */
+      .donacion {
+        text-align: center;
+      }
+
+      .donacion h2 {
+        font-size: 2.6rem;
+        margin-bottom: 32px;
+        font-weight: 900;
+        color: var(--verde-principal);
+      }
+
+      .donacion-content {
+        max-width: 900px;
+        margin: 0 auto 48px;
+      }
+
+      .donacion-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--texto);
+        margin-bottom: 24px;
+      }
+
+      .donacion-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1000px;
+        margin: 48px auto 0;
+      }
+
+      .donacion-card {
+        background: var(--blanco);
+        border-radius: 24px;
+        padding: 40px 32px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 3px solid var(--turquesa);
+      }
+
+      .donacion-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(10, 107, 99, 0.2);
+        border-color: var(--verde-principal);
+      }
+
+      .donacion-card h3 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--verde-principal);
+        margin-bottom: 16px;
+      }
+
+      .donacion-card p {
+        font-size: 1rem;
+        color: #4a5568;
+      }
+
+      /* ==== FOOTER ==== */
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--verde-oscuro) 0%,
+          var(--verde-principal) 100%
+        );
+        color: var(--blanco);
+        padding: 56px 32px;
+        text-align: center;
+        margin-top: 64px;
+      }
+
+      .sociales {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 32px;
+        font-size: 1.1rem;
+      }
+
+      .sociales a {
+        transition: all 0.3s ease;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      .sociales img {
+        max-height: 50px;
+      }
+
+      .sociales a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+      }
+
+      footer p {
+        opacity: 0.9;
+        font-weight: 600;
+      }
+
+      /* ==== WHATSAPP ==== */
+      .whatsapp {
+        position: fixed;
+        right: 32px;
+        bottom: 32px;
+        width: 68px;
+        height: 68px;
+        background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 32px;
+        z-index: 2000;
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .whatsapp:hover {
+        transform: scale(1.1) translateY(-4px);
+        box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+      }
+
+      /* ==== RESPONSIVE ==== */
+      @media (max-width: 1024px) {
+        .menu-toggle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 300px;
+          height: 100vh;
+          background: linear-gradient(
+            180deg,
+            var(--verde-principal) 0%,
+            var(--verde-oscuro) 100%
+          );
+          flex-direction: column;
+          justify-content: center;
+          gap: 32px;
+          padding: 40px;
+          transition: right 0.4s ease;
+          box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu.active {
+          right: 0;
+        }
+
+        .menu a {
+          color: var(--blanco);
+          font-size: 1.2rem;
+          text-align: center;
+          width: 100%;
+        }
+
+        .menu a::after {
+          background: linear-gradient(90deg, var(--turquesa), var(--amarillo));
+        }
+
+        .menu .btn-cta {
+          background: var(--blanco);
+          color: var(--verde-principal);
+          width: 100%;
+          text-align: center;
+        }
+
+        .menu .btn-cta:hover {
+          background: var(--turquesa);
+          color: var(--blanco);
+        }
+
+        .leer-sentidos {
+          grid-template-columns: 1fr;
+          padding: 64px 48px;
+        }
+
+        .libro-item {
+          grid-template-columns: 1fr;
+        }
+
+        .donacion-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 48px 24px;
+        }
+
+        .hero {
+          padding: 64px 32px;
+          border-radius: 32px;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .leer-sentidos {
+          padding: 48px 32px;
+          border-radius: 32px;
+        }
+
+        .leer-sentidos-text h2 {
+          font-size: 2rem;
+        }
+
+        .catalogo {
+          padding: 48px 32px;
+          border-radius: 32px;
+        }
+
+        .libro-image {
+          height: 300px;
+        }
+
+        .formatos-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="/img/Logo_Anteojos Ediciones_02.png"
+            alt="Anteojos Ediciones"
+          />
+        </div>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="menu" id="menu">
+          <a href="/index.html">Inicio</a>
+          <a href="/quienes-somos.html">Quiénes somos</a>
+          <a href="/libros.html">Libros y 7 formatos</a>
+          <a href="/servicios.html">Servicios</a>
+          <a href="/contacto.html">Contacto</a>
+          <a href="#" class="btn-cta">Comprar libros</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section>
+        <div class="container hero">
+          <div class="hero-content">
+            <h1>Libros que se leen con los sentidos</h1>
+            <p>
+              Un libro, siete formas de vivirlo. Creamos historias que nacen
+              accesibles para que todas las personas compartan la misma lectura,
+              sin barreras.
+            </p>
+            <div class="hero-buttons">
+              <a href="#catalogo" class="btn-primary"
+                >Explorar nuestros libros</a
+              >
+              <a href="#formatos" class="btn-secondary"
+                >Conoce nuestros 7 formatos</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEER CON LOS SENTIDOS -->
+      <section>
+        <div class="container leer-sentidos">
+          <div class="leer-sentidos-text">
+            <h2>Leer con los sentidos</h2>
+            <p>
+              Leer con los sentidos es oír, tocar, mirar, imaginar y compartir
+              la misma historia de distintas maneras.
+            </p>
+            <p style="margin-top: 24px">
+              En cada libro de Anteojos Ediciones, la experiencia lectora se
+              amplía: el sonido se une a la imagen, la seña acompaña la palabra,
+              la voz se convierte en emoción. Nuestros siete formatos cierran
+              brechas y dicen sí a la inclusión en los libros y las historias.
+            </p>
+          </div>
+          <div class="leer-sentidos-image">FOTO / IMAGEN</div>
+        </div>
+      </section>
+
+      <!-- SIETE FORMATOS -->
+      <section id="formatos">
+        <div class="container siete-formatos">
+          <h2>Siete formas de vivir la misma historia</h2>
+          <p>
+            Porque leer con los sentidos es abrir la puerta a un mundo donde
+            todas las personas tienen un lugar.
+          </p>
+
+          <div class="puzzle-container">
+            <p style="margin-top: 24px; font-style: italic; color: #666">
+              Para acceder a los formatos digitales, escaneas los códigos QR que
+              trae el libro.
+            </p>
+          </div>
+
+          <div class="formatos-grid">
+            <div class="formato-card">
+              <h3>📖 Libro ilustrado</h3>
+              <p>
+                Un formato para mirar, detenerse y disfrutar la lectura con
+                calma. Las imágenes y las palabras dialogan para invitar a
+                explorar la historia página a página.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>✨ Lectura Fácil</h3>
+              <p>
+                Lenguaje claro y directo, acompañado de un glosario y apoyos
+                visuales. Ideal para quienes están aprendiendo a leer, a
+                escribir o prefieren textos más sencillos.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>🤟 Glosario con Lengua de Señas</h3>
+              <p>
+                Ilustraciones y códigos QR que llevan a videos explicativos en
+                Lengua de Señas Colombiana. Un formato para aprender, compartir
+                y descubrir nuevas formas de comunicación.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>🎨 Pictogramas</h3>
+              <p>
+                Las palabras se acompañan de imágenes que las representan. Un
+                formato visual pensado para lectores y lectoras que se apoyan en
+                lo gráfico para comprender mejor el texto.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>🎬 Animación digital</h3>
+              <p>
+                Una película que da vida a las ilustraciones del libro.
+                Narración, efectos sonoros y subtítulos para sentir la historia
+                con todos los sentidos.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>🎧 Audiodescripción</h3>
+              <p>
+                La historia narrada con emoción y descripciones detalladas de
+                las ilustraciones. Un formato para imaginar con la escucha.
+              </p>
+            </div>
+
+            <div class="formato-card">
+              <h3>👐 Lengua de Señas Colombiana (LSC)</h3>
+              <p>
+                La historia contada en LSC con voz en off. Un formato para
+                compartir la lectura entre personas con diferentes formas de
+                comunicarse.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATÁLOGO -->
+      <section id="catalogo">
+        <div class="container catalogo">
+          <h2>Nuestros libros</h2>
+
+          <div class="libro-item">
+            <div class="libro-image">Imagen de Catrina</div>
+            <div class="libro-content">
+              <h3>El Día de los Muertos de Catrina</h3>
+              <p>
+                Un recorrido alegre y luminoso por una de las tradiciones más
+                bellas de México.
+              </p>
+              <p>
+                Catrina y su amigo Micifuz nos invitan a celebrar la vida, la
+                memoria y el amor por quienes ya partieron con inmensa gratitud.
+              </p>
+              <a href="#" class="btn-libro">¡Quiero Catrina!</a>
+            </div>
+          </div>
+
+          <div class="libro-item">
+            <div class="libro-image">Imagen de Ucumarí</div>
+            <div class="libro-content">
+              <h3>Ucumarí, el guardián de la montaña</h3>
+              <p>
+                Descubre la magia del páramo de Chingaza a través de los ojos
+                del oso andino, Ucumarí. Este libro, diseñado para todos, te
+                invita a leer sin barreras y a proteger un santuario natural
+                único en el mundo.
+              </p>
+              <p>
+                Un libro ilustrado ganador del estímulo y reconocimiento de
+                Parques Nacionales Naturales de Colombia.
+              </p>
+              <a href="#" class="btn-libro">¡Quiero Ucumarí!</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DONACIÓN -->
+      <section>
+        <div class="container donacion">
+          <h2>Libros que se compran y se comparten</h2>
+          <div class="donacion-content">
+            <p>
+              Cada libro es un puente. Cada donación, un aporte a nuestra
+              sociedad para decirle sí a la inclusión en los libros y las
+              historias.
+            </p>
+            <p>
+              Nuestros libros pueden adquirirse a título personal o para donar a
+              bibliotecas, escuelas, instituciones y comunidades rurales, donde
+              se convierten en oportunidades de lectura, conocimiento y
+              encuentro. Una vez se efectúe la donación, recibes la constancia
+              en video y por escrito.
+            </p>
+            <p style="font-weight: 700; color: var(--verde-principal)">
+              Porque leer con los sentidos también es sembrar esperanza.
+            </p>
+          </div>
+
+          <h3
+            style="
+              font-size: 1.8rem;
+              margin-bottom: 32px;
+              color: var(--verde-principal);
+            "
+          >
+            ¿Cómo puedes hacerlo?
+          </h3>
+
+          <div class="donacion-grid">
+            <div class="donacion-card">
+              <h3>📚 Dona un libro</h3>
+              <p>
+                Regala la oportunidad de leer con los sentidos a una persona o
+                institución.
+              </p>
+            </div>
+
+            <div class="donacion-card">
+              <h3>📦 Dona un paquete</h3>
+              <p>
+                5, 10 o 20 libros para multiplicar el impacto de tu donación.
+              </p>
+            </div>
+
+            <div class="donacion-card">
+              <h3>🤝 Alianzas institucionales</h3>
+              <p>
+                Trabajemos juntos para llevar la lectura inclusiva a más
+                comunidades.
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="btn-primary" style="margin-top: 48px"
+            >¡Quiero donar libros!</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="sociales">
+        <a
+          href="https://www.instagram.com/anteojosediciones?igsh=MWVuZ2dncTV1cjZwdw%3D%3D&utm_source=qr"
+          target="_blank"
+          ><img src="/img/instagram.png" alt="Instagram"
+        /></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61560272981216&mibextid=ZbWKwL"
+          target="_blank"
+          ><img src="/img/facebook.png" alt="Facebook"
+        /></a>
+        <a href="mailto:anteojosediciones@gmail.com" target="_blank"
+          ><img src="/img/mail.png" alt="Email"
+        /></a>
+      </div>
+      <p>© Anteojos Ediciones 2026</p>
+      <p style="margin-top: 8px; font-size: 0.9rem">
+        NIT 901.422.008-8 | Bogotá, Colombia
+      </p>
+    </footer>
+
+    <a href="http://wa.me/573102864821" class="whatsapp" target="_blank"
+      ><img src="/img/whatsapp.png" alt="WhatsApp"
+    /></a>
+
+    <script>
+      // Menú hamburguesa
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+
+      // Cerrar menú al hacer click en un enlace
+      const menuLinks = menu.querySelectorAll("a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        });
+      });
+
+      // Cerrar menú al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove("active");
+          menu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
