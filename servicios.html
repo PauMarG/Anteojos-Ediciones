@@ -91,8 +91,11 @@
         --verde-principal: #0a6b63;
         --verde-oscuro: #064f49;
         --turquesa: #78c8c3;
+        --turquesa-oscuro: #37958e;
         --rosa: #eeb9b0;
-        --amarillo: #f4c8b4;
+        --rosa-oscuro: #b5847b;
+        --amarillo: #f4cb64;
+        --amarillo-oscuro: #a68b45;
         --gris-claro: #f8f9fa;
         --texto: #1f1f1f;
         --blanco: #ffff;
@@ -258,7 +261,7 @@
 
       /* ==== MAIN ==== */
       main {
-        margin-top: 120px;
+        margin-top: 150px;
       }
 
       section {
@@ -384,59 +387,81 @@
         color: #0a6b63;
       }
 
-      /* ==== QUIÉNES SOMOS ==== */
+      /* ==== SERVICIOS ==== */
       .quienes {
-        background: linear-gradient(
-          135deg,
-          var(--verde-principal) 0%,
-          var(--verde-oscuro) 100%
-        );
         color: var(--blanco);
         border-radius: 56px;
-        display: grid;
-        grid-template-columns: 0.7fr 1.3fr;
-        gap: 72px;
+        display: flex;
         align-items: center;
+        justify-content: center;
         padding: 72px;
         box-shadow: 0 20px 60px rgba(10, 107, 99, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Imagen de fondo para todos los contenedores */
+      .quienes::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url(/img/Anteojos\ Señalando.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 22%;
+        z-index: 0;
+      }
+
+      /* Primer contenedor - turquesa */
+      section:nth-of-type(2) .quienes {
+        background: linear-gradient(
+          135deg,
+          var(--turquesa) 0%,
+          var(--turquesa-oscuro) 100%
+        );
+      }
+
+      /* Segundo contenedor - rosa */
+      section:nth-of-type(3) .quienes {
+        background: linear-gradient(
+          135deg,
+          var(--rosa) 0%,
+          var(--rosa-oscuro) 100%
+        );
+      }
+
+      /* Tercer contenedor - amarillo */
+      section:nth-of-type(4) .quienes {
+        background: linear-gradient(
+          135deg,
+          var(--amarillo) 0%,
+          var(--amarillo-oscuro) 100%
+        );
+      }
+
+      .quienes-text {
+        text-align: center;
+        max-width: 900px;
+        position: relative;
+        z-index: 1;
       }
 
       .quienes-text p {
-        margin-bottom: 40px;
-        font-size: 2rem;
+        margin-bottom: 0;
+        font-size: 1.9rem;
         line-height: 1.9;
         opacity: 0.95;
       }
 
-      .quienes-text .btn-cta {
-        background: var(--blanco);
-        color: var(--verde-principal);
-        display: inline-block;
+      .quienes-text span {
+        margin-bottom: 0;
+        font-size: 1.9rem;
+        line-height: 2;
+        opacity: 1;
       }
 
-      .quienes-text .btn-cta:hover {
-        background: var(--turquesa);
-        color: var(--texto);
-      }
-
-      .quienes .imagen {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        background: var(--blanco);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      }
-
-      .quienes .imagen img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      .quienes h2 {
+        font-size: 1.9rem;
       }
 
       /* ==== SERVICIOS ==== */
@@ -633,9 +658,7 @@
       /* ==== RESPONSIVE ==== */
       @media (max-width: 1024px) {
         .quienes {
-          grid-template-columns: 1fr;
           padding: 64px 48px;
-          text-align: center;
         }
 
         .cards {
@@ -720,6 +743,10 @@
         .frase {
           font-size: 1.5rem;
         }
+
+        .quienes-text p {
+          font-size: 1.3rem;
+        }
       }
     </style>
   </head>
@@ -755,23 +782,22 @@
       <!-- FRASE -->
       <section>
         <p class="frase">
-          Creemos que el cambio ocurre cuando se trabaja en <span class="frase-destacada2">equipo</span>. <br>
-          Por eso llevamos nuestra <span class="frase-destacada2">visión de acceso universal</span> <br>a la lectura a diferentes espacios:
+          Creemos que el cambio ocurre cuando se trabaja en
+          <span class="frase-destacada2">equipo</span>. <br />
+          Por eso llevamos nuestra
+          <span class="frase-destacada2">visión de acceso universal</span>
+          <br />a la lectura a diferentes espacios:
         </p>
       </section>
-    
+
       <!-- SERVICIOS -->
       <section id="quienes">
         <div class="container quienes">
-          <div class="imagen">
-            <img
-              src="/img/Logo_Anteojos Ediciones_redondo.png"
-              alt="Logo Anteojos Redondo"
-            />
-          </div>
           <div class="quienes-text">
             <p>
-              • Creación de productos editoriales y multimedia. <br> • Adaptación de contenidos a formatos accesibles. <br> • Diagnóstico y consultoría de marca.
+              • Creación de productos editoriales y multimedia. <br />
+              • Adaptación de contenidos a formatos accesibles. <br />
+              • Diagnóstico y consultoría de marca.
             </p>
           </div>
         </div>
@@ -779,15 +805,14 @@
 
       <section id="quienes">
         <div class="container quienes">
-          <div class="imagen">
-            <img
-              src="/img/Logo_Anteojos Ediciones_redondo.png"
-              alt="Logo Anteojos Redondo"
-            />
-          </div>
           <div class="quienes-text">
             <p>
-            • Talleres, conferencias, capacitaciones, charlas, conversatorios, cursos, webinars y MasterClass. <br> • Temas clave: lenguaje inclusivo, pedagogía en discapacidad e inclusión, accesibilidad, normativa legal, pictogramas, Lectura Fácil, Lengua de Señas, Braille, DUA, PIAR, entre otros.
+              • Talleres, conferencias, capacitaciones, charlas, <br />
+              conversatorios, cursos, webinars y MasterClass. <br />
+              • Temas clave: lenguaje inclusivo, pedagogía en <br />
+              discapacidad e inclusión, accesibilidad, normativa legal,
+              pictogramas, Lectura Fácil, Lengua de Señas, Braille, <br />
+              DUA, PIAR, entre otros.
             </p>
           </div>
         </div>
@@ -795,19 +820,16 @@
 
       <section id="quienes">
         <div class="container quienes">
-          <div class="imagen">
-            <img
-              src="/img/Logo_Anteojos Ediciones_redondo.png"
-              alt="Logo Anteojos Redondo"
-            />
-          </div>
           <div class="quienes-text">
             <p>
-            Diseñamos experiencias únicas para sumergirnos en la lectura inclusiva, ¡cuéntanos tu idea y hagámosla realidad!
+              Diseñamos experiencias únicas para sumergirnos <br />
+              en la lectura inclusiva, <br />
             </p>
+            <h2>¡Cuéntanos tu idea y hagámosla realidad!</h2>
           </div>
         </div>
       </section>
+    </main>
 
     <footer>
       <div class="sociales">
