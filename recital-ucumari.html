@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anteojos Ediciones | Servicios y Experiencias</title>
+    <title>Recital Ucumarí | Anteojos Ediciones</title>
 
     <!-- Favicons -->
     <link
@@ -90,13 +90,13 @@
       :root {
         --verde-principal: #0a6b63;
         --verde-oscuro: #064f49;
-        --turquesa: #78c8c3;
-        --turquesa-oscuro: #37958e;
+        --turquesa: #aadcd9;
         --rosa: #eeb9b0;
-        --rosa-oscuro: #b5847b;
-        --amarillo: #f4cb64;
-        --amarillo-oscuro: #a68b45;
+        --amarillo: #f4c8b4;
+        --verde-claro: #b8e6d5;
+        --azul: #6b9bd1;
         --gris-claro: #f8f9fa;
+        --gris-medio: #d1d5db;
         --texto: #1f1f1f;
         --blanco: #ffff;
       }
@@ -273,71 +273,204 @@
         margin: 0 auto;
       }
 
-      /* ==== SERVICIOS ==== */
-      .quienes {
+      /* ==== HERO ==== */
+      .hero {
+        background: var(--gris-claro);
+        border-radius: 48px;
+        padding: 80px 72px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 900;
+        margin-bottom: 32px;
+        color: var(--texto);
+        line-height: 1.2;
+      }
+
+      .hero p {
+        max-width: 900px;
+        margin: 0 auto 24px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--texto);
+      }
+
+      .hero .btn-comprar {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
         color: var(--blanco);
-        border-radius: 56px;
+        padding: 16px 40px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        display: inline-block;
+        margin-top: 24px;
+      }
+
+      .hero .btn-comprar:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      /* ==== SOBRE EL RECITAL ==== */
+      .sobre-recital {
+        background: var(--verde-principal);
+        border-radius: 48px;
+        padding: 80px 72px;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 64px;
+        align-items: center;
+        color: var(--blanco);
+      }
+
+      .video-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .video-placeholder {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: var(--gris-claro);
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 72px;
-        box-shadow: 0 20px 60px rgba(10, 107, 99, 0.25);
-        position: relative;
-        overflow: hidden;
+        font-size: 3rem;
+        color: var(--texto);
       }
 
-      /* Asegurar que el contenido esté encima */
-      .quienes-content {
-        position: relative;
-        z-index: 3;
+      .audio-placeholder {
+        width: 100%;
+        height: 60px;
+        background: var(--gris-claro);
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        gap: 16px;
       }
 
-      .quienes-text {
-        position: relative;
-        text-align: center;
-        z-index: 3;
+      .audio-placeholder::before {
+        content: "●";
+        font-size: 2rem;
+        color: var(--verde-principal);
       }
 
-      .quienes h2 {
-        font-size: clamp(2rem, 3vw, 3rem);
-        font-weight: 900;
-        margin-bottom: 28px;
-        color: var(--blanco);
-      }
-
-      .quienes h3 {
-        margin-bottom: 1.8rem;
-        font-size: 1.8rem;
+      .sobre-recital-text p {
+        font-size: 1.15rem;
         line-height: 1.8;
-        opacity: 0.95;
+        margin-bottom: 24px;
       }
 
-      .quienes p {
-        margin-bottom: 0;
-        font-size: 1.4rem;
-        line-height: 1.4;
-        opacity: 0.95;
+      /* ==== CANCIONES ==== */
+      .canciones-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin-top: 48px;
       }
 
-      /* Imagen de fondo para todos los contenedores */
-      .quienes::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url(/img/Anteojos\ Señalando.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 22%;
-        z-index: 0;
+      .cancion-card {
+        background: var(--blanco);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 3px solid transparent;
       }
 
-      /* Primer contenedor - turquesa */
-      section:nth-of-type(1) .quienes {
+      .cancion-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(10, 107, 99, 0.15);
+      }
+
+      .cancion-card.rosa {
+        border-color: var(--rosa);
+      }
+
+      .cancion-card.verde {
+        border-color: var(--verde-claro);
+      }
+
+      .cancion-card.verde-lima {
+        border-color: #c8e6c9;
+      }
+
+      .cancion-card.azul {
+        border-color: var(--azul);
+      }
+
+      .cancion-card h3 {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--texto);
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .cancion-icons {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        font-size: 2.5rem;
+      }
+
+      .cancion-placeholder {
+        width: 100%;
+        height: 80px;
+        background: var(--gris-claro);
+        border-radius: 16px;
+        margin-top: 16px;
+      }
+
+      /* ==== CTA FINAL ==== */
+      .cta-final {
+        text-align: center;
         background: linear-gradient(
           135deg,
-          var(--turquesa) 0%,
-          var(--turquesa-oscuro) 100%
+          rgba(170, 220, 217, 0.3) 0%,
+          rgba(244, 200, 180, 0.3) 100%
         );
+        border-radius: 48px;
+        padding: 80px 72px;
+      }
+
+      .cta-final h2 {
+        font-size: 2.4rem;
+        font-weight: 900;
+        color: var(--texto);
+        margin-bottom: 40px;
+      }
+
+      .cta-final .btn-whatsapp {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 18px 48px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        display: inline-block;
+      }
+
+      .cta-final .btn-whatsapp:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
       }
 
       /* ==== FOOTER ==== */
@@ -409,15 +542,6 @@
 
       /* ==== RESPONSIVE ==== */
       @media (max-width: 1024px) {
-        .quienes {
-          padding: 64px 48px;
-        }
-
-        .cards {
-          grid-template-columns: 1fr;
-        }
-
-        /* Mostrar botón hamburguesa en tablets verticales */
         .menu-toggle {
           display: flex;
           flex-direction: column;
@@ -470,34 +594,43 @@
           background: var(--turquesa);
           color: var(--blanco);
         }
+
+        .sobre-recital {
+          grid-template-columns: 1fr;
+          padding: 64px 48px;
+        }
+
+        .canciones-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 768px) {
         section {
-          padding: 64px 24px;
+          padding: 48px 24px;
         }
 
         .hero {
-          padding: 80px 40px;
-          border-radius: 32px;
-        }
-
-        .quienes {
-          padding: 48px 32px;
-          border-radius: 32px;
-        }
-
-        .servicios {
           padding: 64px 32px;
           border-radius: 32px;
         }
 
-        .frase {
-          font-size: 1.5rem;
+        .hero h1 {
+          font-size: 2rem;
         }
 
-        .quienes-text p {
-          font-size: 1.3rem;
+        .sobre-recital {
+          padding: 48px 32px;
+          border-radius: 32px;
+        }
+
+        .cta-final {
+          padding: 48px 32px;
+          border-radius: 32px;
+        }
+
+        .cta-final h2 {
+          font-size: 1.8rem;
         }
       }
     </style>
@@ -532,23 +665,105 @@
     </header>
 
     <main>
-      <!-- SERVICIOS -->
-      <section id="quienes">
-        <div class="container quienes">
-          <div class="quienes-text">
-            <h2>Queremos tomar la mano</h2>
-            <h3>
-              De quienes leen, escuchan, miran, sienten y <br />
-              creen —como nosotros— que los libros pueden <br />
-              abrir caminos y derribar barreras.
-            </h3>
+      <!-- HERO -->
+      <section>
+        <div class="container hero">
+          <h1>Ucumarí, el guardián de la montaña | Recital</h1>
+          <p>
+            Este show musical es un viaje sonoro por los caminos del páramo.
+          </p>
+          <p>
+            Una experiencia de voz, guitarra y proyecciones que combina
+            canciones originales, narración e ilustración.
+          </p>
+          <p>
+            Guiados por Ucumarí, un oso andino curioso y bondadoso, los
+            espectadores descubren la magia del páramo: el brillo del agua, el
+            silencio de los frailejones y el arrullo del viento.
+          </p>
+          <a href="/ucumari.html" class="btn-comprar">Comprar libro</a>
+        </div>
+      </section>
+
+      <!-- SOBRE EL RECITAL -->
+      <section>
+        <div class="container sobre-recital">
+          <div class="video-container">
+            <div class="video-placeholder">▶</div>
+            <div class="audio-placeholder"></div>
+          </div>
+
+          <div class="sobre-recital-text">
             <p>
-              Escríbenos, conversemos y construyamos juntos proyectos que
-              abracen la diversidad <br />
-              como parte de lo humano, y le digan sí a la inclusión en los
-              libros y las historias para todos.
+              Este show musical es un viaje sonoro por los caminos del páramo.
+              Una experiencia de voz, guitarra y proyecciones que combina
+              canciones originales, narración e ilustración.
+            </p>
+            <p>
+              Guiados por Ucumarí, un oso andino curioso y bondadoso, los
+              espectadores descubren la magia del páramo: el brillo del agua, el
+              silencio de los frailejones y el arrullo del viento.
+            </p>
+            <p>
+              Con el apoyo de interpretación en Lengua de Señas Colombiana, este
+              recital invita a abrazar la diversidad y a cuidar la montaña, ese
+              lugar donde todo comienza.
             </p>
           </div>
+        </div>
+      </section>
+
+      <!-- CANCIONES -->
+      <section>
+        <div class="container canciones-grid">
+          <div class="cancion-card rosa">
+            <h3>Soy un oso</h3>
+            <div class="cancion-icons">
+              <span>🎵</span>
+              <span>🔊</span>
+            </div>
+            <div class="cancion-placeholder"></div>
+          </div>
+
+          <div class="cancion-card verde">
+            <h3>No necesitas más</h3>
+            <div class="cancion-icons">
+              <span>🎵</span>
+              <span>🔊</span>
+            </div>
+            <div class="cancion-placeholder"></div>
+          </div>
+
+          <div class="cancion-card verde-lima">
+            <h3>Si estás aquí</h3>
+            <div class="cancion-icons">
+              <span>🎵</span>
+              <span>🔊</span>
+            </div>
+            <div class="cancion-placeholder"></div>
+          </div>
+
+          <div class="cancion-card azul">
+            <h3>Vamos a jugar</h3>
+            <div class="cancion-icons">
+              <span>🎵</span>
+              <span>🔊</span>
+            </div>
+            <div class="cancion-placeholder"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section>
+        <div class="container cta-final">
+          <h2>¿Quieres llevar el recital a tu espacio o institución?</h2>
+          <a
+            href="http://wa.me/573102864821"
+            class="btn-whatsapp"
+            target="_blank"
+            >Escríbenos por WhatsApp</a
+          >
         </div>
       </section>
     </main>
@@ -565,11 +780,14 @@
           target="_blank"
           ><img src="/img/facebook.png" alt="Facebook"
         /></a>
-        <a href="mailto:anteojosedicionessitioweb@gmail.com" target="_blank"
+        <a href="mailto:anteojosediciones@gmail.com" target="_blank"
           ><img src="/img/mail.png" alt="Email"
         /></a>
       </div>
       <p>© Anteojos Ediciones 2026</p>
+      <p style="margin-top: 8px; font-size: 0.9rem">
+        NIT 901.422.008-8 | Bogotá, Colombia
+      </p>
     </footer>
 
     <a href="http://wa.me/573102864821" class="whatsapp" target="_blank"
