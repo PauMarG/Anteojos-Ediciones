@@ -340,6 +340,76 @@
         );
       }
 
+      /* ==== FORMULARIO ==== */
+      .formulario-contacto {
+        max-width: 700px;
+        margin: 0 auto;
+        background: var(--blanco);
+        padding: 48px;
+        border-radius: 32px;
+        box-shadow: 0 10px 40px rgba(10, 107, 99, 0.15);
+      }
+
+      .form-group {
+        margin-bottom: 28px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        color: var(--texto);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 16px 20px;
+        border: 2px solid var(--gris-claro);
+        border-radius: 16px;
+        font-family: "Raleway", sans-serif;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: var(--gris-claro);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--turquesa);
+        background: var(--blanco);
+        box-shadow: 0 0 0 4px rgba(120, 200, 195, 0.1);
+      }
+
+      .form-group textarea {
+        min-height: 160px;
+        resize: vertical;
+      }
+
+      .btn-enviar {
+        background: linear-gradient(
+          135deg,
+          var(--verde-principal) 0%,
+          var(--verde-oscuro) 100%
+        );
+        color: var(--blanco);
+        padding: 16px 48px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(10, 107, 99, 0.3);
+        width: 100%;
+      }
+
+      .btn-enviar:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
       /* ==== FOOTER ==== */
       footer {
         background: linear-gradient(
@@ -499,6 +569,26 @@
         .quienes-text p {
           font-size: 1.3rem;
         }
+
+        .formulario-contacto {
+          padding: 32px 24px;
+          border-radius: 24px;
+        }
+
+        .form-group label {
+          font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: 14px 16px;
+          font-size: 0.95rem;
+        }
+
+        .btn-enviar {
+          padding: 14px 32px;
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -549,6 +639,34 @@
               libros y las historias para todos.
             </p>
           </div>
+        </div>
+      </section>
+
+      <!-- FORMULARIO -->
+      <section>
+        <div class="container">
+          <form
+            class="formulario-contacto"
+            action="https://formsubmit.co/anteojosediciones@gmail.com"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </form>
         </div>
       </section>
     </main>
