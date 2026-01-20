@@ -292,11 +292,17 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(170, 220, 217, 0.85) 0%,
-          rgba(244, 200, 180, 0.85) 100%
-        );
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url(/img/sentidos.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.3;
         z-index: 1;
       }
 
@@ -313,12 +319,10 @@
       }
 
       .hero p {
-        max-width: 820px;
-        margin: 0 auto 48px;
-        font-size: 1.3rem;
-        font-weight: 600;
+        font-size: clamp(1.5rem, 3vw, 1.5rem);
+        margin-bottom: 1.5rem;
         color: var(--texto);
-        line-height: 1.8;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
       }
 
       .hero-buttons {
@@ -394,18 +398,12 @@
       .leer-sentidos-image {
         width: 100%;
         height: 400px;
-        background: linear-gradient(
-          135deg,
-          var(--turquesa) 0%,
-          var(--rosa) 100%
-        );
+        background-image: url(img/sentidos.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         border-radius: 32px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--texto);
       }
 
       /* ==== SIETE FORMATOS ==== */
@@ -555,6 +553,21 @@
       .libro-content .btn-libro:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 25px rgba(10, 107, 99, 0.4);
+      }
+
+      /* Imágenes específicas para cada libro */
+      #catalogo .libro-item:nth-child(2) .libro-image {
+        background-image: url(/img/Catrina_1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      #catalogo .libro-item:nth-child(3) .libro-image {
+        background-image: url(/img/Ucumari_1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       /* ==== DONACIÓN ==== */
@@ -862,7 +875,7 @@
               brechas y dicen sí a la inclusión en los libros y las historias.
             </p>
           </div>
-          <div class="leer-sentidos-image">FOTO / IMAGEN</div>
+          <div class="leer-sentidos-image"></div>
         </div>
       </section>
 
@@ -952,9 +965,8 @@
       <section id="catalogo">
         <div class="container catalogo">
           <h2>Nuestros libros</h2>
-
           <div class="libro-item">
-            <div class="libro-image">Imagen de Catrina</div>
+            <div class="libro-image"></div>
             <div class="libro-content">
               <h3>El Día de los Muertos de Catrina</h3>
               <p>
@@ -970,7 +982,7 @@
           </div>
 
           <div class="libro-item">
-            <div class="libro-image">Imagen de Ucumarí</div>
+            <div class="libro-image"></div>
             <div class="libro-content">
               <h3>Ucumarí, el guardián de la montaña</h3>
               <p>
@@ -1070,9 +1082,7 @@
         /></a>
       </div>
       <p>© Anteojos Ediciones 2026</p>
-      <p style="margin-top: 8px; font-size: 0.9rem">
-        NIT 901.422.008-8 | Bogotá, Colombia
-      </p>
+      <p style="margin-top: 8px; font-size: 0.9rem"></p>
     </footer>
 
     <a href="http://wa.me/573102864821" class="whatsapp" target="_blank"
