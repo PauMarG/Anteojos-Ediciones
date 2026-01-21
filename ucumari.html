@@ -312,11 +312,6 @@
       .imagen-secundaria {
         width: 100%;
         aspect-ratio: 1;
-        background: linear-gradient(
-          135deg,
-          var(--turquesa) 0%,
-          var(--verde-principal) 100%
-        );
         border-radius: 16px;
         display: flex;
         align-items: center;
@@ -329,6 +324,39 @@
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(10, 107, 99, 0.15);
+        position: relative;
+      }
+
+      .imagen-secundaria:nth-child(1) {
+        background-image: url('/img/ucumari_01.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .imagen-secundaria:nth-child(2) {
+        background-image: url('/img/ucumari_02.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .imagen-secundaria:nth-child(3) {
+        background-image: url('/img/ucumari_03.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      .imagen-secundaria::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 16px;
+        z-index: 0;
       }
 
       .imagen-secundaria:hover {
@@ -746,25 +774,23 @@
 
     <main>
       <!-- HERO LIBRO -->
-      <section>
+      <section id="libros">
         <div class="container hero-libro">
           <!-- Columna izquierda: Imágenes -->
           <div class="libro-portada-sticky">
             <div class="libro-imagenes">
               <div class="libro-imagen-principal">
                 <img
-                  src="ucumari.png"
+                  src="img/20240921_102923.jpg"
                   alt="Ucumarí, el guardián de la montaña"
                 />
               </div>
               <div class="libro-imagenes-secundarias">
-                <div class="imagen-secundaria">Foto / Imagen</div>
-                <div class="imagen-secundaria">Foto / Imagen</div>
-                <div class="imagen-secundaria">Foto / Imagen</div>
+                <div class="imagen-secundaria"></div>
+                <div class="imagen-secundaria"></div>
+                <div class="imagen-secundaria"></div>
               </div>
-              <div class="imagen-secundaria video">
-                <span>▶ Video YouTube</span>
-              </div>
+              <iframe src="https://youtu.be/FKDFnwa2IWY?si=jCmPPsjKwsR5-DU6?controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
@@ -858,7 +884,7 @@
           </p>
           <p>
             Si el libro es un obsequio, podemos enviarlo con el mensaje que nos
-            indiques a la dirección que nos compartas vía WhatsApp al
+            indiques a la dirección que nos compartas vía <br> WhatsApp al
             <strong>(+57) 310 286 4821</strong>.
           </p>
         </div>
@@ -912,6 +938,26 @@
           menuToggle.classList.remove("active");
           menu.classList.remove("active");
         }
+      });
+
+      // Cambiar imagen principal al hacer click en imágenes secundarias
+      const imagenPrincipal = document.querySelector('.libro-imagen-principal img');
+      const imagenesSecundarias = document.querySelectorAll('.imagen-secundaria');
+
+      imagenesSecundarias.forEach((imagen, index) => {
+        imagen.addEventListener('click', () => {
+          // Obtener la URL de la imagen de fondo del elemento clickeado
+          const bgImage = window.getComputedStyle(imagen).backgroundImage;
+          // Extraer la URL (remover "url(" y ")")
+          const imageUrl = bgImage.slice(5, -2);
+          
+          // Cambiar la imagen principal
+          imagenPrincipal.src = imageUrl;
+          
+          // Efecto visual opcional: resaltar la imagen seleccionada
+          imagenesSecundarias.forEach(img => img.style.opacity = '0.6');
+          imagen.style.opacity = '1';
+        });
       });
     </script>
   </body>

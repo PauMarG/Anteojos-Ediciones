@@ -312,11 +312,6 @@
       .imagen-secundaria {
         width: 100%;
         aspect-ratio: 1;
-        background: linear-gradient(
-          135deg,
-          var(--turquesa) 0%,
-          var(--verde-principal) 100%
-        );
         border-radius: 16px;
         display: flex;
         align-items: center;
@@ -329,11 +324,49 @@
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(10, 107, 99, 0.15);
+        position: relative;
+      }
+
+      .imagen-secundaria:nth-child(1) {
+        background-image: url('/img/catrina_01.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .imagen-secundaria:nth-child(2) {
+        background-image: url('/img/catrina_02.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .imagen-secundaria:nth-child(3) {
+        background-image: url('/img/catrina_03.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      .imagen-secundaria::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 16px;
+        z-index: 0;
       }
 
       .imagen-secundaria:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px rgba(10, 107, 99, 0.25);
+      }
+
+      .imagen-secundaria.active {
+        border: 3px solid var(--verde-principal);
+        transform: scale(1.05);
       }
 
       .imagen-secundaria.video {
@@ -753,18 +786,17 @@
             <div class="libro-imagenes">
               <div class="libro-imagen-principal">
                 <img
-                  src="catrina.png"
+                  src="img/20240921_102922.jpg"
                   alt="El Día de los Muertos de Catrina"
                 />
               </div>
               <div class="libro-imagenes-secundarias">
-                <div class="imagen-secundaria">Foto / Imagen</div>
-                <div class="imagen-secundaria">Foto / Imagen</div>
-                <div class="imagen-secundaria">Foto / Imagen</div>
+                <div class="imagen-secundaria" data-image="/img/catrina_01.jpg"></div>
+                <div class="imagen-secundaria" data-image="/img/catrina_02.jpg"></div>
+                <div class="imagen-secundaria" data-image="/img/catrina_03.jpg"></div>
               </div>
-              <div class="imagen-secundaria video">
-                <span>▶ Video YouTube</span>
-              </div>
+                <iframe src="https://youtu.be/xJMVBunPapw?si=FKBtVDM8uLYm0P0q?controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <span></span>
             </div>
           </div>
 
@@ -842,7 +874,7 @@
           </p>
           <p>
             Si el libro es un obsequio, podemos enviarlo con el mensaje que nos
-            indiques a la dirección que nos compartas vía WhatsApp al
+            indiques a la dirección que nos compartas vía <br> WhatsApp al
             <strong>(+57) 310 286 4821</strong>.
           </p>
         </div>
@@ -896,6 +928,20 @@
           menuToggle.classList.remove("active");
           menu.classList.remove("active");
         }
+      });
+
+      // Cambiar imagen principal al hacer click en imágenes secundarias
+      const imagenPrincipal = document.querySelector(".libro-imagen-principal img");
+      const imagenesSecundarias = document.querySelectorAll(".imagen-secundaria");
+
+      imagenesSecundarias.forEach((imagenSecundaria) => {
+        imagenSecundaria.addEventListener("click", () => {
+          const nuevaImagen = imagenSecundaria.getAttribute("data-image");
+          if (nuevaImagen) {
+            imagenPrincipal.src = nuevaImagen;
+            imagenPrincipal.alt = "Imagen del libro";
+          }
+        });
       });
     </script>
   </body>

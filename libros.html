@@ -430,6 +430,7 @@
         max-width: 1000px;
         margin: 0 auto 48px;
         position: relative;
+        vertical-align: auto;
       }
 
       .puzzle-image {
@@ -440,9 +441,13 @@
 
       .formatos-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 32px;
         margin-top: 64px;
+      }
+
+      .formatos-grid .formato-card:nth-child(7) {
+        grid-column: 2 / 3;
       }
 
       .formato-card {
