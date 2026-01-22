@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -768,6 +768,15 @@
         .donacion-grid {
           grid-template-columns: 1fr;
         }
+
+        /* Ajuste para tablets verticales - cards de formatos en una columna */
+        .formatos-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .formatos-grid .formato-card:nth-child(7) {
+          grid-column: 1 / 2;
+        }
       }
 
       @media (max-width: 768px) {
@@ -806,8 +815,13 @@
           height: 300px;
         }
 
+        /* Cards de formatos en una columna para celulares */
         .formatos-grid {
           grid-template-columns: 1fr;
+        }
+
+        .formatos-grid .formato-card:nth-child(7) {
+          grid-column: 1 / 2;
         }
       }
     </style>
