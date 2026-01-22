@@ -325,7 +325,7 @@
         border-radius: 48px;
         padding: 80px 72px;
         display: grid;
-        grid-template-columns: 400px 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 64px;
         align-items: center;
         color: var(--blanco);
@@ -347,23 +347,6 @@
         justify-content: center;
         font-size: 3rem;
         color: var(--texto);
-      }
-
-      .audio-placeholder {
-        width: 100%;
-        height: 60px;
-        background: var(--gris-claro);
-        border-radius: 999px;
-        display: flex;
-        align-items: center;
-        padding: 0 24px;
-        gap: 16px;
-      }
-
-      .audio-placeholder::before {
-        content: "●";
-        font-size: 2rem;
-        color: var(--verde-principal);
       }
 
       .sobre-recital-text p {
@@ -443,6 +426,8 @@
         );
         border-radius: 48px;
         padding: 80px 72px;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .cta-final h2 {
@@ -689,8 +674,7 @@
       <section>
         <div class="container sobre-recital">
           <div class="video-container">
-            <div class="video-placeholder">▶</div>
-            <div class="audio-placeholder"></div>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/BsB9rUjBMIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);"></iframe>
           </div>
 
           <div class="sobre-recital-text">
@@ -720,23 +704,24 @@
             <h3>Soy un oso</h3>
             <div class="cancion-icons">
               <span>🎵</span>
-              <span>🔊</span>
+              <span>🔊 <br></span>
             </div>
-            <div class="cancion-placeholder"></div>
+            <iframe width="320" height="180" src="https://www.youtube.com/embed/917OJZYtdbU" title="YouTube video player cancion soy un oso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: 0 auto; border-radius: 12px;"></iframe>
           </div>
           
-    <!-- CANCIONES EN PAUSA-->
 
-          <!--  <div class="cancion-card verde">
-            <h3>No necesitas más</h3>
+          <div class="cancion-card verde">
+            <h3>Soy un oso</h3>
             <div class="cancion-icons">
               <span>🎵</span>
-              <span>🔊</span>
+              <span>🔊 <br></span>
             </div>
-            <div class="cancion-placeholder"></div>
+            <iframe width="320" height="180" src="https://www.youtube.com/embed/917OJZYtdbU" title="YouTube video player cancion soy un oso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: 0 auto; border-radius: 12px;"></iframe>
           </div>
 
-          <div class="cancion-card verde-lima">
+    <!-- CANCIONES EN PAUSA-->
+
+          <!--  <div class="cancion-card verde-lima">
             <h3>Si estás aquí</h3>
             <div class="cancion-icons">
               <span>🎵</span>
