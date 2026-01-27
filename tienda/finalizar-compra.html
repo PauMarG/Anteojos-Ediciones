@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizar Compra - Anteojos Ediciones</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --verde-principal: #0a6b63;
+        --verde-oscuro: #064f49;
+        --acento: #78c8c3;
+        --fondo: #fbfcfb;
+        --card: #ffffff;
+        --texto: #1f1f1f;
+        --muted: #6b7280;
+        --danger: #dc2626;
+        --radius: 14px;
+        --shadow: 0 8px 30px rgba(10, 107, 99, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+        margin: 0;
+        background: linear-gradient(180deg, #f7fbfa 0%, var(--fondo) 100%);
+        color: var(--texto);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 2.5rem 1rem;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      header.page-head {
+        text-align: center;
+        margin-bottom: 1.75rem;
+      }
+      header.page-head h1 {
+        margin: 0;
+        font-size: 1.9rem;
+        color: var(--verde-principal);
+        font-weight: 700;
+      }
+      header.page-head p {
+        margin-top: 0.4rem;
+        color: var(--muted);
+      }
+
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* Card */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(10, 10, 10, 0.03);
+      }
+
+      /* Form layout */
+      form fieldset {
+        border: none;
+        margin: 0 0 1.25rem 0;
+        padding: 0;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .section-title h2 {
+        font-size: 1.05rem;
+        margin: 0;
+        color: var(--verde-oscuro);
+        font-weight: 700;
+      }
+      .section-sub {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      label {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+        color: #2b2b2b;
+        font-weight: 600;
+      }
+
+      .input,
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #e6e9ea;
+        background: #fff;
+        font-size: 0.98rem;
+        color: var(--texto);
+        outline: none;
+        transition:
+          box-shadow 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .input:focus,
+      input[type="text"]:focus,
+      textarea:focus {
+        border-color: var(--acento);
+        box-shadow: 0 4px 18px rgba(120, 200, 195, 0.14);
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+      }
+      .col {
+        flex: 1;
+      }
+
+      /* Shipping option cards */
+      .shipping-options {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+      }
+      @media (min-width: 720px) {
+        .shipping-options {
+          flex-direction: row;
+        }
+      }
+
+      .ship-card {
+        flex: 1;
+        border-radius: 12px;
+        padding: 12px;
+        border: 1px solid #e6e9ea;
+        cursor: pointer;
+        background: linear-gradient(180deg, #fff 0%, #fbffff 100%);
+        transition:
+          transform 0.12s ease,
+          box-shadow 0.12s ease,
+          border-color 0.12s ease;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .ship-card .meta {
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+      .ship-card input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--verde-principal);
+      }
+      .ship-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(10, 107, 99, 0.06);
+        border-color: rgba(120, 200, 195, 0.5);
+      }
+      .ship-card.selected {
+        border-color: var(--acento);
+        box-shadow: 0 10px 32px rgba(120, 200, 195, 0.12);
+        transform: none;
+      }
+
+      /* Gift area */
+      .gift-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .gift-row input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--verde-principal);
+      }
+
+      /* Summary */
+      .summary {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .summary .line {
+        display: flex;
+        justify-content: space-between;
+        color: #333;
+        font-weight: 600;
+      }
+      .summary .muted {
+        color: var(--muted);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+      .total {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--verde-oscuro);
+      }
+
+      /* Action */
+      .btn {
+        display: inline-block;
+        background: linear-gradient(
+          90deg,
+          var(--verde-principal),
+          var(--verde-oscuro)
+        );
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 800;
+        font-size: 1rem;
+        width: 100%;
+        box-shadow: 0 8px 22px rgba(10, 107, 99, 0.12);
+        transition:
+          transform 0.08s ease,
+          opacity 0.12s ease;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .btn.secondary {
+        background: #f3f4f6;
+        color: #111827;
+        box-shadow: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+
+      .note {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .error {
+        color: var(--danger);
+        font-size: 0.9rem;
+        margin-top: -0.6rem;
+        margin-bottom: 0.9rem;
+        display: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .checkout-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-head">
+        <h1>Finalizar Compra</h1>
+        <p>
+          Completa los datos de envío y selecciona el método de envío
+          obligatorio.
+        </p>
+      </header>
+
+      <section class="checkout-grid">
+        <!-- LEFT: Form -->
+        <div class="card">
+          <form id="checkout-form" novalidate>
+            <!-- Shipping -->
+            <fieldset>
+              <div class="section-title">
+                <h2>
+                  Opciones de Envío <span style="color: var(--danger)">*</span>
+                </h2>
+              </div>
+              <div
+                class="shipping-options"
+                role="radiogroup"
+                aria-label="Opciones de envío"
+              >
+                <label class="ship-card" id="label-bogota">
+                  <input type="radio" name="envio" value="bogota" />
+                  <div>
+                    <div style="font-weight: 700; color: #0b6b63">
+                      Bogotá — 1 a 2 días hábiles
+                    </div>
+                    <div class="meta">$10.000 adicional</div>
+                  </div>
+                </label>
+
+                <label class="ship-card" id="label-otras">
+                  <input type="radio" name="envio" value="otras" />
+                  <div>
+                    <div style="font-weight: 700; color: #0b6b63">
+                      Otras ciudades — 2 a 3 días hábiles
+                    </div>
+                    <div class="meta">$16.000 adicional</div>
+                  </div>
+                </label>
+              </div>
+              <div class="error" id="envio-error">
+                Debes seleccionar una opción de envío.
+              </div>
+            </fieldset>
+
+            <!-- Shipping info -->
+            <fieldset>
+              <div class="section-title">
+                <h2>
+                  Información para el envío
+                  <span style="color: var(--danger)">*</span>
+                </h2>
+              </div>
+
+              <div class="row" style="margin-bottom: 12px">
+                <div class="col">
+                  <label for="nombre">Nombre y Apellido</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    placeholder="Ej: María Pérez"
+                  />
+                </div>
+              </div>
+
+              <label for="direccion">Dirección</label>
+              <input
+                class="input"
+                type="text"
+                id="direccion"
+                name="direccion"
+                required
+                placeholder="Calle 123 #45-67, Apt 2"
+              />
+
+              <div class="row">
+                <div class="col">
+                  <label for="ciudad">Ciudad</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="ciudad"
+                    name="ciudad"
+                    required
+                    placeholder="Bogotá"
+                  />
+                </div>
+                <div style="width: 140px">
+                  <label for="codigo-postal">Código postal</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="codigo-postal"
+                    name="codigo-postal"
+                    required
+                    placeholder="000000"
+                  />
+                </div>
+              </div>
+              <div class="error" id="info-error">
+                Por favor completa todos los campos obligatorios.
+              </div>
+            </fieldset>
+
+            <!-- Gift -->
+            <fieldset>
+              <div class="section-title" style="margin-bottom: 8px">
+                <h2>¿Es un obsequio?</h2>
+              </div>
+              <div class="gift-row" style="margin-bottom: 10px">
+                <input type="checkbox" id="es-obsequio" name="es-obsequio" />
+                <label
+                  for="es-obsequio"
+                  style="margin: 0; font-weight: 600; color: #333"
+                  >Marcar si es obsequio</label
+                >
+              </div>
+              <label
+                for="mensaje-obsequio"
+                id="gift-label"
+                style="display: none; margin-bottom: 6px"
+                >Mensaje para el obsequio (opcional)</label
+              >
+              <textarea
+                id="mensaje-obsequio"
+                name="mensaje-obsequio"
+                rows="3"
+                class="input"
+                style="display: none"
+                placeholder="Escribe aquí un mensaje para incluir en el paquete..."
+              ></textarea>
+            </fieldset>
+
+            <!-- Buttons -->
+            <fieldset style="margin-top: 6px">
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <button
+                  type="button"
+                  class="btn secondary"
+                  id="volver-btn"
+                  onclick="history.back()"
+                >
+                  Volver
+                </button>
+                <button type="submit" class="btn" id="pay-btn">
+                  Realizar pago
+                </button>
+              </div>
+              <div class="note">
+                Al pulsar "Realizar pago" serás redirigido a MercadoPago para
+                completar la transacción.
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <!-- RIGHT: Order summary -->
+        <aside class="card">
+          <div class="section-title">
+            <h2>Resumen de la orden</h2>
+          </div>
+
+          <div class="summary" aria-live="polite">
+            <div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div class="muted">Subtotal</div>
+                <div id="subtotal-display" class="muted">$0</div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 8px;
+                  align-items: center;
+                "
+              >
+                <div class="muted">Envío</div>
+                <div id="shipping-display" class="muted">$0</div>
+              </div>
+            </div>
+
+            <div
+              style="
+                height: 1px;
+                background: #eef2f2;
+                border-radius: 2px;
+                margin-top: 8px;
+              "
+            ></div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 8px;
+              "
+            >
+              <div class="total">Total</div>
+              <div class="total" id="total-display">$0</div>
+            </div>
+
+            <div style="margin-top: 8px" class="note">
+              Los cargos de envío serán aplicados según la opción seleccionada.
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+
+    <script>
+      // Helper: format currency
+      function formatCOP(num) {
+        return "$" + Number(num).toLocaleString("es-CO");
+      }
+
+      // Read cart total from localStorage if exists. Expected formats:
+      // - 'cart_total' as a number
+      // - 'cart' as JSON array of items {name, price}
+      function loadCartTotal() {
+        try {
+          const t1 = localStorage.getItem("cart_total");
+          if (t1) return Number(t1);
+
+          const cartRaw = localStorage.getItem("cart");
+          if (cartRaw) {
+            const cart = JSON.parse(cartRaw);
+            if (Array.isArray(cart)) {
+              return cart.reduce((s, i) => s + (Number(i.price) || 0), 0);
+            }
+          }
+        } catch (e) {
+          console.warn("No se pudo leer el carrito de localStorage", e);
+        }
+        // fallback demo total
+        return 50000;
+      }
+
+      // Initial values
+      const subtotal = loadCartTotal();
+      let shippingCost = 0;
+      const subtotalEl = document.getElementById("subtotal-display");
+      const shippingEl = document.getElementById("shipping-display");
+      const totalEl = document.getElementById("total-display");
+
+      function refreshSummary() {
+        subtotalEl.textContent = formatCOP(subtotal);
+        shippingEl.textContent = formatCOP(shippingCost);
+        totalEl.textContent = formatCOP(subtotal + shippingCost);
+      }
+
+      // Shipping cards behavior
+      const shipInputs = document.querySelectorAll('input[name="envio"]');
+      const labelBog = document.getElementById("label-bogota");
+      const labelOtr = document.getElementById("label-otras");
+
+      function clearShipSelectionUI() {
+        labelBog.classList.remove("selected");
+        labelOtr.classList.remove("selected");
+      }
+
+      shipInputs.forEach((inp) => {
+        inp.addEventListener("change", (e) => {
+          clearShipSelectionUI();
+          if (e.target.value === "bogota") {
+            labelBog.classList.add("selected");
+            shippingCost = 10000;
+          } else if (e.target.value === "otras") {
+            labelOtr.classList.add("selected");
+            shippingCost = 16000;
+          } else {
+            shippingCost = 0;
+          }
+          document.getElementById("envio-error").style.display = "none";
+          refreshSummary();
+        });
+
+        // Also allow clicking the whole label: handled by native label/input linkage
+      });
+
+      // Gift checkbox behavior
+      const giftCheckbox = document.getElementById("es-obsequio");
+      const giftTextarea = document.getElementById("mensaje-obsequio");
+      const giftLabel = document.getElementById("gift-label");
+
+      giftCheckbox.addEventListener("change", () => {
+        if (giftCheckbox.checked) {
+          giftTextarea.style.display = "block";
+          giftLabel.style.display = "block";
+        } else {
+          giftTextarea.style.display = "none";
+          giftLabel.style.display = "none";
+          giftTextarea.value = "";
+        }
+      });
+
+      // Form submit
+      const form = document.getElementById("checkout-form");
+      form.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+
+        // Clear errors
+        document.getElementById("envio-error").style.display = "none";
+        document.getElementById("info-error").style.display = "none";
+
+        // Validate shipping selected
+        const envio = document.querySelector('input[name="envio"]:checked');
+        if (!envio) {
+          document.getElementById("envio-error").style.display = "block";
+          document
+            .getElementById("envio-error")
+            .scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+
+        // Validate required fields
+        const nombre = document.getElementById("nombre").value.trim();
+        const direccion = document.getElementById("direccion").value.trim();
+        const ciudad = document.getElementById("ciudad").value.trim();
+        const codigo = document.getElementById("codigo-postal").value.trim();
+
+        if (!nombre || !direccion || !ciudad || !codigo) {
+          document.getElementById("info-error").style.display = "block";
+          document
+            .getElementById("info-error")
+            .scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+
+        // Set shipping cost based on selection (re-assign just in case)
+        if (envio.value === "bogota") shippingCost = 10000;
+        else shippingCost = 16000;
+
+        refreshSummary();
+
+        // Build payload (what you would send to your backend)
+        const payload = {
+          subtotal: subtotal,
+          shipping: shippingCost,
+          total: subtotal + shippingCost,
+          envio: envio.value,
+          nombre: nombre,
+          direccion: direccion,
+          ciudad: ciudad,
+          codigo_postal: codigo,
+          es_obsequio: giftCheckbox.checked,
+          mensaje_obsequio: giftCheckbox.checked
+            ? document.getElementById("mensaje-obsequio").value.trim()
+            : "",
+        };
+
+        // ---- INTEGRACIÓN CON MERCADOPAGO (recomendación) ----
+        // 1) En el backend: crear una 'preference' / 'payment' con la API de MercadoPago con el monto payload.total,
+        //    y devolver la URL de checkout (o el id de preferencia).
+        // 2) En el frontend: redirigir al usuario a esa URL de MercadoPago.
+        //
+        // Aquí simulamos la redirección creando una URL local que tu backend podría recibir:
+        // Por ejemplo: /crear-preferencia (POST) => MercadoPago devuelve checkout_url => window.location = checkout_url
+        //
+        // La implementación real requiere llamadas server-side con tus credenciales MP.
+
+        // For demo: redirect to a local placeholder route with query params (replace this with your real server flow)
+        const query = new URLSearchParams({
+          total: payload.total,
+          nombre: payload.nombre,
+          envio: payload.envio,
+        }).toString();
+
+        // Simulate sending payload to backend and redirecting to MercadoPago
+        // Replace this fetch with your backend endpoint that creates the MP preference.
+        // Example:
+        // fetch('/api/create-mercadopago-preference', {method:'POST', body: JSON.stringify(payload), headers:{'Content-Type':'application/json'}})
+        //   .then(r => r.json()).then(data => { window.location.href = data.checkout_url; });
+
+        // Temporary simulation: show confirm and then redirect to placeholder
+        if (
+          confirm(
+            `Total a pagar: ${formatCOP(payload.total)}\n\n¿Deseas continuar y ser redirigido a MercadoPago?`,
+          )
+        ) {
+          // Simulated redirect URL (replace with real checkout URL returned by your backend)
+          const simulatedCheckoutUrl = `/pagar-mercadopago?${query}`;
+          window.location.href = simulatedCheckoutUrl;
+        }
+      });
+
+      // On load
+      (function init() {
+        refreshSummary();
+        // If previously a selection was stored, restore it (optional)
+        const savedEnvio = localStorage.getItem("pedido_envio");
+        if (savedEnvio) {
+          const el = document.querySelector(
+            `input[name="envio"][value="${savedEnvio}"]`,
+          );
+          if (el) {
+            el.checked = true;
+            el.dispatchEvent(new Event("change"));
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

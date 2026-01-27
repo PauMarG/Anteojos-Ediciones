@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda Anteojos Ediciones</title>
+    <title>Tienda Anteojos Ediciones | Donar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -129,6 +129,11 @@
         color: inherit;
       }
 
+      .informacion {
+        text-decoration: underline;
+        color: var(--verde-oscuro);
+      }
+
       @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap");
       body {
         font-family: "Raleway", sans-serif;
@@ -240,7 +245,7 @@
     <!-- Productos -->
     <main class="max-w-7xl mx-auto px-4 py-12">
       <h2 class="text-3xl font-bold text-center mb-12">
-        Nuestros Libros - Comprar
+        Nuestros Libros - Donar
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Producto 1 -->
@@ -257,8 +262,11 @@
           </h3>
           <p class="text-gray-600 mb-4 text-sm">
             Un recorrido alegre y luminoso por una de las tradiciones más bellas
-            de México.
+            de México. <br />
           </p>
+          <a class="informacion" href="/catrina.html" target="_blank">
+            Más información</a
+          >
           <div class="flex justify-between items-center">
             <span class="text-2xl font-black text-teal-700">$80.000</span>
             <button
@@ -275,7 +283,7 @@
           class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-pink-400"
         >
           <img
-            src="/img/Ucumari_1.jpg"
+            src="/img/Ucumari_2.jpg"
             alt="Libro Ucumari el guardian de la montaña"
             class="w-full h-64 object-cover rounded-2xl mb-4"
           />
@@ -284,8 +292,11 @@
           </h3>
           <p class="text-gray-600 mb-4 text-sm">
             Descubre la magia del páramo de Chingaza a través de los ojos del
-            oso andino.
+            oso andino. <br />
           </p>
+          <a class="informacion" href="/ucumari.html" target="_blank">
+            Más información</a
+          >
           <div class="flex justify-between items-center">
             <span class="text-2xl font-black text-teal-700">$120.000</span>
             <button
@@ -302,20 +313,21 @@
           class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-yellow-400"
         >
           <img
-            src="/img/diorama_1.jpeg"
+            src="/img/catrinax5.png"
             alt="Libro"
             class="w-full h-64 object-cover rounded-2xl mb-4"
           />
-          <h3 class="text-xl font-bold mb-2">Diorama de Catrina para pintar</h3>
-          <p class="text-gray-600 mb-4 text-sm">
-            Descubre una nueva forma de sumergirte en esta mágica historia con
-            nuestro diorama artístico, un escenario inspirado en una de las
-            ilustraciones del libro.
-          </p>
+          <h3 class="text-xl font-bold mb-2">
+            El día de los muertos de Catrina
+          </h3>
+          <p class="text-gray-600 mb-4 text-sm">Pack por 5 unidades</p>
+          <a class="informacion" href="/catrina.html" target="_blank">
+            Más información</a
+          >
           <div class="flex justify-between items-center">
-            <span class="text-2xl font-black text-teal-700">$50.000</span>
+            <span class="text-2xl font-black text-teal-700">$160.000</span>
             <button
-              onclick="addToCart('Diorama', 50000)"
+              onclick="addToCart('Catrinax5', 160000)"
               class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
             >
               Agregar
@@ -328,18 +340,18 @@
           class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-yellow-400"
         >
           <img
-            src="/img/20240921_102922.jpg"
+            src="/img/ucumarix5.png"
             alt="Libro"
             class="w-full h-64 object-cover rounded-2xl mb-4"
           />
-          <h3 class="text-xl font-bold mb-2">Libro + Diorama</h3>
-          <p class="text-gray-600 mb-4 text-sm">
-            Libro el Día de los Muertos de Catrina con Diorama para pintar.
-          </p>
+          <h3 class="text-xl font-bold mb-2">
+            Ucumarí, el guardián de la montaña
+          </h3>
+          <p class="text-gray-600 mb-4 text-sm">Pack por 5 unidades.</p>
           <div class="flex justify-between items-center">
-            <span class="text-2xl font-black text-teal-700">$50.000</span>
+            <span class="text-2xl font-black text-teal-700">$240.000</span>
             <button
-              onclick="addToCart('Catrina con Diorama', 113000)"
+              onclick="addToCart('Ucumarix5', 240000)"
               class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
             >
               Agregar
@@ -372,12 +384,11 @@
             <span>Total:</span>
             <span id="cart-total">$0</span>
           </div>
-          <button
-            onclick="checkout()"
-            class="w-full bg-teal-700 text-white py-4 rounded-2xl font-bold text-lg hover:bg-teal-800 transition shadow-lg"
+          <a
+            href="finalizar-compra.html"
+            class="w-full block text-center bg-teal-700 text-white py-4 rounded-2xl font-bold text-lg hover:bg-teal-800 transition shadow-lg"
+            >Finalizar Compra</a
           >
-            Pagar con Mercado Pago
-          </button>
           <p class="text-center text-xs text-gray-400 mt-4">
             Pagos seguros vía PSE, Tarjeta o Efectivo
           </p>
@@ -403,8 +414,32 @@
         overlay.classList.toggle("pointer-events-none");
       }
 
+      // Guardar carrito en localStorage
+      function saveCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // También guardar el total para acceso rápido
+        const total = cart.reduce((acc, item) => acc + item.price, 0);
+        localStorage.setItem("cart_total", total.toString());
+      }
+
+      // Cargar carrito desde localStorage al iniciar
+      function loadCart() {
+        const storedCart = localStorage.getItem("cart");
+        if (storedCart) {
+          try {
+            cart = JSON.parse(storedCart);
+          } catch (e) {
+            console.warn("Error parsing cart from localStorage", e);
+            cart = [];
+          }
+        } else {
+          cart = [];
+        }
+      }
+
       function addToCart(name, price) {
         cart.push({ name, price });
+        saveCart();
         updateCartUI();
         // Abrir carrito automáticamente al agregar
         const drawer = document.getElementById("cart-drawer");
@@ -430,11 +465,11 @@
             (item, index) => `
                 <div class="flex justify-between items-center bg-gray-50 p-3 rounded-xl">
                     <div>
-                        <p class="font-bold">${item.name}</p>
-                        <p class="text-teal-600 text-sm">$${item.price.toLocaleString()}</p>
+                    <p class="font-bold">${item.name}</p>
+                    <p class="text-teal-600 text-sm">$${item.price.toLocaleString()}</p>
                     </div>
                     <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600">
-                        <i class="fas fa-trash"></i>
+                    <i class="fas fa-trash"></i>
                     </button>
                 </div>
             `,
@@ -447,6 +482,7 @@
 
       function removeItem(index) {
         cart.splice(index, 1);
+        saveCart();
         updateCartUI();
       }
 
@@ -464,6 +500,12 @@
         // 1. Enviar datos a EmailJS para avisar al administrador.
         // 2. Redirigir al link de pago generado por Mercado Pago.
       }
+
+      // Inicializar al cargar la página
+      document.addEventListener("DOMContentLoaded", function () {
+        loadCart();
+        updateCartUI();
+      });
     </script>
 
     <footer>

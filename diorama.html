@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ucumarí, el guardián de la montaña | Anteojos Ediciones</title>
+    <title>Diorama | Anteojos Ediciones</title>
 
     <!-- Favicons -->
     <link
@@ -328,21 +328,21 @@
       }
 
       .imagen-secundaria:nth-child(1) {
-        background-image: url('/img/ucumari_01.jpg');
+        background-image: url('/img/diorama_3.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
 
       .imagen-secundaria:nth-child(2) {
-        background-image: url('/img/ucumari_02.jpg');
+        background-image: url('/img/diorama_4.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
 
       .imagen-secundaria:nth-child(3) {
-        background-image: url('/img/ucumari_03.jpg');
+        background-image: url('/img/diorama_5.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -362,6 +362,11 @@
       .imagen-secundaria:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px rgba(10, 107, 99, 0.25);
+      }
+
+      .imagen-secundaria.active {
+        border: 3px solid var(--verde-principal);
+        transform: scale(1.05);
       }
 
       .imagen-secundaria.video {
@@ -782,109 +787,54 @@
 
     <main>
       <!-- HERO LIBRO -->
-      <section id="libros">
+      <section>
         <div class="container hero-libro">
           <!-- Columna izquierda: Imágenes -->
           <div class="libro-portada-sticky">
             <div class="libro-imagenes">
               <div class="libro-imagen-principal">
                 <img
-                  src="img/20240921_102923.jpg"
-                  alt="Ucumarí, el guardián de la montaña"
+                  src="img/diorama_2.jpg"
+                  alt="El Día de los Muertos de Catrina"
                 />
               </div>
               <div class="libro-imagenes-secundarias">
-                <div class="imagen-secundaria"></div>
-                <div class="imagen-secundaria"></div>
-                <div class="imagen-secundaria"></div>
+                <div class="imagen-secundaria" data-image="/img/diorama_3.jpeg"></div>
+                <div class="imagen-secundaria" data-image="/img/diorama_4.jpeg"></div>
+                <div class="imagen-secundaria" data-image="/img/diorama_5.jpeg"></div>
               </div>
-              <iframe 
-                width="100%" 
-                height="200" 
-                src="https://www.youtube.com/embed/FKDFnwa2IWY?si=jCmPPsjKwsR5-DU6" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                style="border-radius: 16px; margin-top: 12px;">
-              </iframe>
             </div>
           </div>
 
           <!-- Columna derecha: Información -->
           <div class="libro-info">
-            <h1>Ucumarí, el guardián de la montaña</h1>
-            <p class="libro-autores">
-              Escrito por Tatiana Duplat Ayala e ilustrado por Alejandra Ruiz
-            </p>
+            <h1>Diorama - El Día de los Muertos de Catrina</h1>
+            <h3>Descubre una nueva forma de sumergirte en esta mágica historia con nuestro diorama artístico, un escenario inspirado en una de las ilustraciones del libro.</h3>
 
             <div class="libro-descripcion">
               <p>
-                Recorre el páramo de Chingaza guiado por Ucumarí, un oso andino
-                curioso y bondadoso.
-              </p>
-              <p>
-                Un libro ilustrado de no ficción que te invita a sumergirte en
-                la niebla, sorprenderte con los frailejones, sapitos y el vuelo
-                de los colibríes. Acompaña a Ucumarí en esta aventura inclusiva
-                y descubre el guardián del páramo que vive en ti.
+                <br>
+                <span>Incluye:</span><br>
+                • Base.<br>
+                • Fondo.<br>
+                • Lámpara.<br>
+                • Figura de Catrina y Micifuz.<br>
+                • Logo de Anteojos Ediciones.<br>
+                • Pinturas y pincel.<br>
+                <br>
+                <span>Es ideal para:</span><br>
+                ✔️ Fomentar la imaginación y la creatividad
+                de los niños.<br>
+                ✔️ Trabajar la motricidad fina<br>
+                ✔️ Cultivar el arte y el amor por la literatura.<br>
               </p>
             </div>
 
-            <div class="libro-precio">Precio: $120.000 COP</div>
+            <div class="libro-precio">Precio: $50.000 COP</div>
 
             <div class="libro-botones">
               <a href="/tienda/comprar.html" class="btn-comprar">Quiero comprarlo</a>
-              <a href="/tienda/donar.html" class="btn-donar">Quiero donarlo</a>
             </div>
-
-            <div class="libro-detalles">
-              <ul>
-                <li>Tapa dura</li>
-                <li>44 páginas</li>
-                <li>7 formas diferentes de leer la historia</li>
-                <li>28 cm x 24 cm</li>
-                <li>ISBN 978-628-96372-1-2</li>
-              </ul>
-            </div>
-
-        </div>
-      </section>
-
-      <!-- ¿POR QUÉ LEERLO? -->
-      <section>
-        <div class="container seccion-contenido">
-          <h2>¿Por qué leerlo?</h2>
-          <ul>
-            <li>
-              <strong>Conecta con la naturaleza desde la emoción:</strong>
-              transforma el cuidado ambiental en una experiencia íntima y
-              poética.
-            </li>
-            <li>
-              <strong
-                >Acerca el páramo de Chingaza a niñas, niños y familias:</strong
-              >
-              frailejones, neblina, agua y especies únicas aparecen como
-              protagonistas.
-            </li>
-            <li>
-              <strong
-                >Abre conversación sobre protección del territorio:</strong
-              >
-              ideal para bibliotecas, colegios, clubes de lectura y procesos
-              comunitarios.
-            </li>
-            <li>
-              <strong>Nace accesible desde el inicio:</strong> sus adaptaciones
-              permiten que personas con distintas formas de leer y comunicarse
-              compartan la misma historia.
-            </li>
-            <li>
-              <strong>Se disfruta en múltiples formatos:</strong> puedes leer en
-              papel, escuchar con audiodescripción, ver la animación o seguirla
-              en LSC.
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -957,22 +907,16 @@
       });
 
       // Cambiar imagen principal al hacer click en imágenes secundarias
-      const imagenPrincipal = document.querySelector('.libro-imagen-principal img');
-      const imagenesSecundarias = document.querySelectorAll('.imagen-secundaria');
+      const imagenPrincipal = document.querySelector(".libro-imagen-principal img");
+      const imagenesSecundarias = document.querySelectorAll(".imagen-secundaria");
 
-      imagenesSecundarias.forEach((imagen, index) => {
-        imagen.addEventListener('click', () => {
-          // Obtener la URL de la imagen de fondo del elemento clickeado
-          const bgImage = window.getComputedStyle(imagen).backgroundImage;
-          // Extraer la URL (remover "url(" y ")")
-          const imageUrl = bgImage.slice(5, -2);
-          
-          // Cambiar la imagen principal
-          imagenPrincipal.src = imageUrl;
-          
-          // Efecto visual opcional: resaltar la imagen seleccionada
-          imagenesSecundarias.forEach(img => img.style.opacity = '0.6');
-          imagen.style.opacity = '1';
+      imagenesSecundarias.forEach((imagenSecundaria) => {
+        imagenSecundaria.addEventListener("click", () => {
+          const nuevaImagen = imagenSecundaria.getAttribute("data-image");
+          if (nuevaImagen) {
+            imagenPrincipal.src = nuevaImagen;
+            imagenPrincipal.alt = "Imagen del libro";
+          }
         });
       });
     </script>
