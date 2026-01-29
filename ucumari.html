@@ -155,6 +155,12 @@
         width: auto;
       }
 
+      .logo a {
+        display: flex;
+        align-items: center;
+        height: 100px;
+      }
+
       .menu {
         display: flex;
         gap: 32px;
@@ -755,10 +761,12 @@
     <header>
       <div class="nav-container">
         <div class="logo">
-          <img
-            src="/img/Logo_Anteojos Ediciones_02.png"
-            alt="Anteojos Ediciones"
-          />
+          <a href="/index.html">
+            <img
+              src="/img/Logo_Anteojos Ediciones_02.png"
+              alt="Anteojos Ediciones"
+            />
+          </a>
         </div>
 
         <!-- Botón hamburguesa -->
@@ -773,7 +781,6 @@
           <a href="/quienes-somos.html">Quiénes somos</a>
           <a href="/libros.html">Libros y 7 formatos</a>
           <a href="/servicios.html">Servicios</a>
-          <!-- Stand By <a href="/recital-ucumari.html">Recital Ucumarí</a> -->
           <a href="/contacto.html">Contacto</a>
           <a href="/tienda/index.html" class="btn-cta">Comprar libros</a>
         </nav>
