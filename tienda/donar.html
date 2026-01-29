@@ -326,14 +326,16 @@
           <h3 class="text-xl font-bold mb-2">
             El día de los muertos de Catrina
           </h3>
-          <p class="text-gray-600 mb-4 text-sm">Pack por 5 unidades</p>
+          <p class="text-gray-600 mb-4 text-sm">
+            Pack por 5 unidades. 10% de descuento sobre el precio de lista.
+          </p>
           <a class="informacion" href="/catrina.html" target="_blank">
             Más información</a
           >
           <div class="flex justify-between items-center">
-            <span class="text-2xl font-black text-teal-700">$160.000</span>
+            <span class="text-2xl font-black text-teal-700">$360.000</span>
             <button
-              onclick="addToCart('Catrinax5', 160000)"
+              onclick="addToCart('Catrinax5', 360000)"
               class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
             >
               Agregar
@@ -343,7 +345,7 @@
 
         <!-- Producto 4 -->
         <div
-          class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-yellow-400"
+          class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-teal-600"
         >
           <img
             src="/img/ucumarix5.png"
@@ -353,16 +355,96 @@
           <h3 class="text-xl font-bold mb-2">
             Ucumarí, el guardián de la montaña
           </h3>
-          <p class="text-gray-600 mb-4 text-sm">Pack por 5 unidades.</p>
+          <p class="text-gray-600 mb-4 text-sm">
+            Pack por 5 unidades. 10% de descuento sobre el precio de lista.
+          </p>
+          <a class="informacion" href="/ucumari.html" target="_blank">
+            Más información</a
+          >
           <div class="flex justify-between items-center">
-            <span class="text-2xl font-black text-teal-700">$240.000</span>
+            <span class="text-2xl font-black text-teal-700">$540.000</span>
             <button
-              onclick="addToCart('Ucumarix5', 240000)"
+              onclick="addToCart('Ucumarix5', 540000)"
               class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
             >
               Agregar
             </button>
           </div>
+        </div>
+        <!-- Producto 5 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-pink-400"
+        >
+          <img
+            src="/img/catrinax10.png"
+            alt="Libro"
+            class="w-full h-64 object-cover rounded-2xl mb-4"
+          />
+          <h3 class="text-xl font-bold mb-2">
+            El día de los muertos de Catrina
+          </h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            Pack por 10 unidades. 15% de descuento sobre el precio de lista.
+          </p>
+          <a class="informacion" href="/catrina.html" target="_blank">
+            Más información</a
+          >
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-black text-teal-700">$720.000</span>
+            <button
+              onclick="addToCart('Catrinax5', 720000)"
+              class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-yellow-400"
+        >
+          <img
+            src="/img/ucumarix10.png"
+            alt="Libro"
+            class="w-full h-64 object-cover rounded-2xl mb-4"
+          />
+          <h3 class="text-xl font-bold mb-2">
+            Ucumarí, el guardián de la montaña
+          </h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            Pack por 10 unidades. 15% de descuento sobre el precio de lista.
+          </p>
+          <a class="informacion" href="/ucumari.html" target="_blank">
+            Más información</a
+          >
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-black text-teal-700">$1.080.000</span>
+            <button
+              onclick="addToCart('Ucumarix5', 1080000)"
+              class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-3xl shadow-lg border-b-4 border-pink-600"
+        >
+          <h3 class="text-xl font-bold mb-2">Otro monto</h3>
+          <input
+            type="number"
+            id="custom-amount"
+            class="custom-amount-input"
+            placeholder="10000"
+            min="1000"
+          />
+          <button
+            class="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition"
+            id="add-custom-amount"
+          >
+            Agregar
+          </button>
         </div>
       </div>
     </main>
@@ -391,9 +473,9 @@
             <span id="cart-total">$0</span>
           </div>
           <a
-            href="finalizar-compra.html"
+            href="finalizar-donacion.html"
             class="w-full block text-center bg-teal-700 text-white py-4 rounded-2xl font-bold text-lg hover:bg-teal-800 transition shadow-lg"
-            >Finalizar Compra</a
+            >Finalizar Donación</a
           >
           <p class="text-center text-xs text-gray-400 mt-4">
             Pagos seguros vía PSE, Tarjeta o Efectivo
@@ -491,6 +573,22 @@
         saveCart();
         updateCartUI();
       }
+
+      // Manejar el botón "Agregar" para monto personalizado
+      document
+        .getElementById("add-custom-amount")
+        .addEventListener("click", () => {
+          const input = document.getElementById("custom-amount");
+          const amount = parseInt(input.value, 10);
+
+          if (isNaN(amount) || amount <= 0) {
+            alert("Por favor ingresa un monto válido mayor a 0.");
+            return;
+          }
+
+          addToCart("Donación personalizada", amount);
+          input.value = "";
+        });
 
       function checkout() {
         if (cart.length === 0) return alert("Agrega productos primero");
