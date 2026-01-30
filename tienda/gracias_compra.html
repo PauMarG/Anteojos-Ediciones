@@ -87,13 +87,12 @@
 
     <!-- Tipografías -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
     <style>
-
-        :root {
+      :root {
         --verde-principal: #0a6b63;
         --verde-oscuro: #064f49;
         --turquesa: #78c8c3;
@@ -104,66 +103,235 @@
         --amarillo-oscuro: #a68b45;
         --gris-claro: #f8f9fa;
         --texto: #1f1f1f;
-        --blanco: #ffff;
+        --blanco: #ffffff;
       }
 
-        img {
-            width: 20%;
-            margin: 0 auto;
+      body {
+        font-family: "Raleway", sans-serif;
+        background-color: var(--gris-claro);
+        color: var(--texto);
+        line-height: 1.6;
+      }
+
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+
+      .logo-container img {
+        max-width: 200px;
+        height: auto;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 107, 99, 0.1) 0%,
+          rgba(120, 200, 195, 0.1) 100%
+        );
+        border-radius: 16px;
+        padding: 2.5rem 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 900px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .thank-you-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--verde-oscuro);
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--verde-principal);
+        line-height: 1.4;
+        margin-bottom: 2rem;
+      }
+
+      .content-section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 900px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .content-text {
+        font-size: 1.125rem;
+        color: var(--texto);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-box {
+        background-color: rgba(120, 200, 195, 0.15);
+        border-left: 4px solid var(--turquesa);
+        border-radius: 0 8px 8px 0;
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .contact-title {
+        font-weight: 700;
+        color: var(--verde-principal);
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #25d366;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin: 1rem 0;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #128c7e;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      }
+
+      .social-link {
+        display: inline-block;
+        color: var(--verde-principal);
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 0.5rem;
+      }
+
+      .social-link:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+        color: var(--verde-oscuro);
+        font-weight: 500;
+      }
+
+      .divider {
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--turquesa),
+          transparent
+        );
+        margin: 2rem auto;
+        max-width: 200px;
+      }
+
+      @media (max-width: 768px) {
+        .thank-you-title {
+          font-size: 1.75rem;
         }
 
-        .destacado {
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--verde-oscuro);
-            line-height: 1.5;
-            padding: 0 18px;
-            margin-bottom: 3rem;
+        .subtitle {
+          font-size: 1.25rem;
         }
 
-        .h3 {
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--verde-principal);
-            line-height: 1.5;
-            padding: 0 18px;
-            margin-bottom: 3rem;
+        .content-section {
+          padding: 1.5rem;
         }
 
-        .parrafo {
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            color: var(--texto);
-            line-height: 1.2;
-            padding: 0 18px;
-            margin-bottom: 2rem;
+        .logo-container img {
+          max-width: 150px;
         }
-
-        footer p {
-            text-align: center;
-        }
-            
-        
+      }
     </style>
   </head>
 
-    <main>
-        <img src="/img/Logo_Anteojos Ediciones_02.png" alt="Logo Anteojos Ediciones">
-        <h2 class="destacado">Hola! Muchas gracias por tu compra y <br> por elegir un libro de Anteojos Ediciones.</h2>
-        <h3 class="h3">Aquí creemos que leer es escuchar, tocar, imaginar y compartir.</h3>
-        <p class="parrafo"> El libro que acabas de adquirir fue creado para vivirse con siete formatos para descubrir <br> otras formas de leer, a través de los sentidos. <br><br>📦 En breve recibirás la información de cómo proseguir con el pago. <br> Si tienes preguntas o quieres escribirnos, puedes hacerlo aquí: 👉 WhatsApp: +57 310 286 4821 <br> ¡Gracias por ponerte los Anteojos y ser parte de esta misión que se siente y se comparte! Síguenos y cuéntanos tu experiencia en @anteojosediciones  </p>
-    </main>
+  <body>
+    <div class="container mx-auto px-4">
+      <div class="logo-container">
+        <img
+          src="/img/Logo_Anteojos Ediciones_02.png"
+          alt="Logo Anteojos Ediciones"
+        />
+      </div>
 
-    <footer>
-      <p>© Anteojos Ediciones 2026</p>
-    </footer>
+      <section class="hero-section">
+        <h1 class="thank-you-title">
+          ¡Hola! Muchas gracias por tu compra<br />y por elegir un libro de
+          Anteojos Ediciones.
+        </h1>
+        <div class="divider"></div>
+        <h2 class="subtitle">
+          Aquí creemos que leer es escuchar, tocar, imaginar y compartir.
+        </h2>
+      </section>
+
+      <section class="content-section">
+        <p class="content-text">
+          El libro que acabas de adquirir fue creado para vivirse con siete
+          formatos para descubrir otras formas de leer, a través de los
+          sentidos.
+        </p>
+
+        <div class="contact-box">
+          <h3 class="contact-title">
+            <i class="fas fa-box mr-2"></i> Próximos pasos
+          </h3>
+          <p class="content-text mb-0">
+            En breve recibirás la información a tu correo electrónico de cómo
+            proseguir con el pago. Posteriormente recibirás también información
+            sobre el envío.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <h3 class="contact-title">
+            <i class="fas fa-question-circle mr-2"></i> ¿Tienes preguntas?
+          </h3>
+          <p class="content-text mb-3">
+            Estamos aquí para ayudarte. Contáctanos.
+          </p>
+          <a href="https://wa.me/573102864821" class="whatsapp-button">
+            <i class="fab fa-whatsapp mr-2"></i> WhatsApp: +57 310 286 4821
+          </a>
+          <p class="content-text mt-4 mb-0">
+            También puedes seguirnos y contarnos tu experiencia en
+            <a
+              href="https://instagram.com/anteojosediciones"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram mr-1"></i>Instagram
+            </a>
+            y
+            <a
+              href="https://www.facebook.com/profile.php?id=61560272981216&mibextid=ZbWKwL"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook mr-1"></i>Facebook
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p>© Anteojos Ediciones 2026</p>
+        <p class="mt-2 text-sm opacity-75">
+          Gracias por ponerte los Anteojos y ser parte de esta misión que se
+          siente y se comparte
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
